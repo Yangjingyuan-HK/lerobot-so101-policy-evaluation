@@ -1,0 +1,418 @@
+(lerobot) C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot>"C:\Users\yangj\anaconda3\envs\lerobot\python.exe" examples/tutorial/pi0/using_pi0_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: ./outputs/pi0_so101_lora/checkpoints/010000/pretrained_model
+The PI0 model is a direct port of the OpenPI implementation.
+This implementation follows the original OpenPI structure for compatibility.
+Original implementation: https://github.com/Physical-Intelligence/openpi
+Loading model from: ./outputs/pi0_so101_lora/checkpoints/010000/pretrained_model
+✓ Loaded state dict from model.safetensors
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.bias
+WARNING:root:Vision embedding key might need handling: model.paligemma_with_expert.paligemma.model.vision_tower.vision_model.embeddings.patch_embedding.weight
+All keys loaded successfully!
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+机器人连接成功！
+任务指令: Grab the red cube
+
+--- Episode 1/1 ---
+  Step: 0/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.8247823715209961
+    shoulder_lift.pos: 2.1924972534179688
+    elbow_flex.pos: -2.9878082275390625
+    wrist_flex.pos: -3.2735977172851562
+    wrist_roll.pos: -0.8240780830383301
+    gripper.pos: 12.316768646240234
+  Step: 10/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -1.714104175567627
+    shoulder_lift.pos: 7.879119873046875
+    elbow_flex.pos: -9.508049011230469
+    wrist_flex.pos: -4.3568115234375
+    wrist_roll.pos: -0.819849967956543
+    gripper.pos: 14.107640266418457
+  Step: 20/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -6.216393947601318
+    shoulder_lift.pos: 24.50613021850586
+    elbow_flex.pos: -15.497838973999023
+    wrist_flex.pos: -6.880878448486328
+    wrist_roll.pos: -6.113503932952881
+    gripper.pos: 14.084156036376953
+  Step: 30/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -4.787374019622803
+    shoulder_lift.pos: 50.90007019042969
+    elbow_flex.pos: -26.49441909790039
+    wrist_flex.pos: -16.015304565429688
+    wrist_roll.pos: -7.785806179046631
+    gripper.pos: 12.156660079956055
+  Step: 40/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 1.8667879104614258
+    shoulder_lift.pos: 65.86575317382812
+    elbow_flex.pos: -36.702396392822266
+    wrist_flex.pos: -23.821182250976562
+    wrist_roll.pos: -0.9838500022888184
+    gripper.pos: 10.541179656982422
+  Step: 50/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -0.08623647689819336
+    shoulder_lift.pos: -4.741825103759766
+    elbow_flex.pos: -1.8803634643554688
+    wrist_flex.pos: 0.9259033203125
+    wrist_roll.pos: 1.1891484260559082
+    gripper.pos: 11.729567527770996
+  Step: 60/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.1633610725402832
+    shoulder_lift.pos: -12.41939926147461
+    elbow_flex.pos: 0.08590316772460938
+    wrist_flex.pos: 6.495388031005859
+    wrist_roll.pos: 1.3180294036865234
+    gripper.pos: 16.0024471282959
+  Step: 70/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -0.9082903861999512
+    shoulder_lift.pos: -29.763835906982422
+    elbow_flex.pos: 1.2405738830566406
+    wrist_flex.pos: 21.738162994384766
+    wrist_roll.pos: 1.690819263458252
+    gripper.pos: 18.350116729736328
+  Step: 80/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -2.1854329109191895
+    shoulder_lift.pos: -39.840763092041016
+    elbow_flex.pos: 1.6767616271972656
+    wrist_flex.pos: 30.796480178833008
+    wrist_roll.pos: 3.014380931854248
+    gripper.pos: 18.775489807128906
+  Step: 90/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -5.18213415145874
+    shoulder_lift.pos: -43.523990631103516
+    elbow_flex.pos: 4.658515930175781
+    wrist_flex.pos: 30.312265396118164
+    wrist_roll.pos: 5.615161895751953
+    gripper.pos: 18.673725128173828
+  Step: 100/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 1.5781240463256836
+    shoulder_lift.pos: 7.8919677734375
+    elbow_flex.pos: -9.288270950317383
+    wrist_flex.pos: 0.31118011474609375
+    wrist_roll.pos: -0.6672577857971191
+    gripper.pos: 17.317657470703125
+  Step: 110/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 9.06821060180664
+    shoulder_lift.pos: 27.599592208862305
+    elbow_flex.pos: -18.338747024536133
+    wrist_flex.pos: -3.354827880859375
+    wrist_roll.pos: 0.08918905258178711
+    gripper.pos: 16.720211029052734
+  Step: 120/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 13.22884750366211
+    shoulder_lift.pos: 43.66948318481445
+    elbow_flex.pos: -23.708866119384766
+    wrist_flex.pos: -6.705055236816406
+    wrist_roll.pos: 1.0673723220825195
+    gripper.pos: 16.41249656677246
+  Step: 130/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 14.536261558532715
+    shoulder_lift.pos: 56.21415710449219
+    elbow_flex.pos: -29.881959915161133
+    wrist_flex.pos: -7.765598297119141
+    wrist_roll.pos: 1.3308019638061523
+    gripper.pos: 16.273386001586914
+  Step: 140/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 15.169185638427734
+    shoulder_lift.pos: 65.56578826904297
+    elbow_flex.pos: -34.727210998535156
+    wrist_flex.pos: -7.662189483642578
+    wrist_roll.pos: 1.6890883445739746
+    gripper.pos: 16.249618530273438
+  Step: 150/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.25687217712402344
+    shoulder_lift.pos: 1.2891006469726562
+    elbow_flex.pos: -4.828464508056641
+    wrist_flex.pos: 1.4042816162109375
+    wrist_roll.pos: 1.4836769104003906
+    gripper.pos: 11.394439697265625
+  Step: 160/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.5189290046691895
+    shoulder_lift.pos: 2.5157089233398438
+    elbow_flex.pos: -6.04420280456543
+    wrist_flex.pos: 1.9991340637207031
+    wrist_roll.pos: 2.385204315185547
+    gripper.pos: 11.742700576782227
+  Step: 170/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -1.1936144828796387
+    shoulder_lift.pos: -3.663726806640625
+    elbow_flex.pos: -3.751972198486328
+    wrist_flex.pos: 4.10040283203125
+    wrist_roll.pos: 3.4461631774902344
+    gripper.pos: 12.63000774383545
+  Step: 180/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -4.1015944480896
+    shoulder_lift.pos: -14.741256713867188
+    elbow_flex.pos: -0.6392822265625
+    wrist_flex.pos: 10.498668670654297
+    wrist_roll.pos: 4.954670429229736
+    gripper.pos: 13.023216247558594
+  Step: 190/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -7.948079586029053
+    shoulder_lift.pos: -33.44997024536133
+    elbow_flex.pos: 10.173770904541016
+    wrist_flex.pos: 21.213607788085938
+    wrist_roll.pos: 7.207501411437988
+    gripper.pos: 10.597128868103027
+  Step: 200/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.22745370864868164
+    shoulder_lift.pos: 1.0770072937011719
+    elbow_flex.pos: -3.3493499755859375
+    wrist_flex.pos: 2.8503684997558594
+    wrist_roll.pos: -0.8635873794555664
+    gripper.pos: 13.317203521728516
+  Step: 210/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.6498260498046875
+    shoulder_lift.pos: 6.2960662841796875
+    elbow_flex.pos: -5.230714797973633
+    wrist_flex.pos: 4.6986541748046875
+    wrist_roll.pos: -4.615957736968994
+    gripper.pos: 9.50808334350586
+  Step: 220/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 1.5341796875
+    shoulder_lift.pos: 10.618949890136719
+    elbow_flex.pos: -5.790010452270508
+    wrist_flex.pos: 5.824424743652344
+    wrist_roll.pos: -4.920882701873779
+    gripper.pos: 9.424614906311035
+  Step: 230/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 2.1121621131896973
+    shoulder_lift.pos: 11.121654510498047
+    elbow_flex.pos: -5.928041458129883
+    wrist_flex.pos: 8.089954376220703
+    wrist_roll.pos: -5.820024013519287
+    gripper.pos: 9.326751708984375
+  Step: 240/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 2.695875644683838
+    shoulder_lift.pos: 10.988616943359375
+    elbow_flex.pos: -7.181709289550781
+    wrist_flex.pos: 12.308929443359375
+    wrist_roll.pos: -7.571887493133545
+    gripper.pos: 9.156524658203125
+  Step: 250/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.5469532012939453
+    shoulder_lift.pos: 1.2728538513183594
+    elbow_flex.pos: -5.235748291015625
+    wrist_flex.pos: 3.9923782348632812
+    wrist_roll.pos: -0.7539587020874023
+    gripper.pos: 8.592401504516602
+  Step: 260/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.5584111213684082
+    shoulder_lift.pos: 2.52691650390625
+    elbow_flex.pos: -8.521142959594727
+    wrist_flex.pos: 7.311737060546875
+    wrist_roll.pos: -2.1098132133483887
+    gripper.pos: 10.152243614196777
+  Step: 270/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.6986370086669922
+    shoulder_lift.pos: 5.466789245605469
+    elbow_flex.pos: -15.527374267578125
+    wrist_flex.pos: 11.275035858154297
+    wrist_roll.pos: -3.1054577827453613
+    gripper.pos: 10.43115234375
+  Step: 280/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 1.2369165420532227
+    shoulder_lift.pos: 7.3223724365234375
+    elbow_flex.pos: -19.89813995361328
+    wrist_flex.pos: 14.276412963867188
+    wrist_roll.pos: -2.5529704093933105
+    gripper.pos: 11.549851417541504
+  Step: 290/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 2.383139133453369
+    shoulder_lift.pos: 7.634532928466797
+    elbow_flex.pos: -21.497180938720703
+    wrist_flex.pos: 16.506301879882812
+    wrist_roll.pos: -2.203390598297119
+    gripper.pos: 11.76986312866211
+  Step: 300/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.8691630363464355
+    shoulder_lift.pos: 1.4015350341796875
+    elbow_flex.pos: -4.052227020263672
+    wrist_flex.pos: 4.290042877197266
+    wrist_roll.pos: -1.04506254196167
+    gripper.pos: 12.686966896057129
+  Step: 310/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 1.0071063041687012
+    shoulder_lift.pos: 1.8314552307128906
+    elbow_flex.pos: -3.897258758544922
+    wrist_flex.pos: 6.386402130126953
+    wrist_roll.pos: 0.8268804550170898
+    gripper.pos: 12.95284652709961
+  Step: 320/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 5.151666641235352
+    shoulder_lift.pos: 1.250640869140625
+    elbow_flex.pos: -3.04583740234375
+    wrist_flex.pos: 5.829139709472656
+    wrist_roll.pos: 5.0973310470581055
+    gripper.pos: 12.698143005371094
+  Step: 330/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 9.550713539123535
+    shoulder_lift.pos: 7.519660949707031
+    elbow_flex.pos: -7.647182464599609
+    wrist_flex.pos: 4.8694305419921875
+    wrist_roll.pos: 5.694739818572998
+    gripper.pos: 12.95406436920166
+  Step: 340/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 8.434349060058594
+    shoulder_lift.pos: 17.72555923461914
+    elbow_flex.pos: -13.774728775024414
+    wrist_flex.pos: 5.917446136474609
+    wrist_roll.pos: 4.439085960388184
+    gripper.pos: 13.548377990722656
+  Step: 350/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 0.7950234413146973
+    shoulder_lift.pos: 2.696430206298828
+    elbow_flex.pos: -10.295856475830078
+    wrist_flex.pos: 10.394237518310547
+    wrist_roll.pos: 1.0104522705078125
+    gripper.pos: 14.198053359985352
+  Step: 360/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -4.676003932952881
+    shoulder_lift.pos: 2.883514404296875
+    elbow_flex.pos: -12.845779418945312
+    wrist_flex.pos: 15.162944793701172
+    wrist_roll.pos: -1.859281063079834
+    gripper.pos: 9.623780250549316
+  Step: 370/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -9.770692825317383
+    shoulder_lift.pos: 16.604381561279297
+    elbow_flex.pos: -20.343217849731445
+    wrist_flex.pos: 14.365066528320312
+    wrist_roll.pos: -2.681832790374756
+    gripper.pos: 9.105039596557617
+  Step: 380/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -8.790252685546875
+    shoulder_lift.pos: 22.006189346313477
+    elbow_flex.pos: -21.990394592285156
+    wrist_flex.pos: 15.216350555419922
+    wrist_roll.pos: -4.478309154510498
+    gripper.pos: 12.22042465209961
+  Step: 390/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -8.447851181030273
+    shoulder_lift.pos: 23.472248077392578
+    elbow_flex.pos: -21.194904327392578
+    wrist_flex.pos: 12.884536743164062
+    wrist_roll.pos: -4.158728122711182
+    gripper.pos: 11.497227668762207
+  Step: 400/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -0.2495894432067871
+    shoulder_lift.pos: 5.809242248535156
+    elbow_flex.pos: -6.2978515625
+    wrist_flex.pos: 0.8456535339355469
+    wrist_roll.pos: 0.6846895217895508
+    gripper.pos: 10.517263412475586
+  Step: 410/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 1.6740188598632812
+    shoulder_lift.pos: 7.964012145996094
+    elbow_flex.pos: -7.7427978515625
+    wrist_flex.pos: 0.4809417724609375
+    wrist_roll.pos: 1.0585899353027344
+    gripper.pos: 9.751070022583008
+  Step: 420/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 6.1093316078186035
+    shoulder_lift.pos: 7.8775482177734375
+    elbow_flex.pos: -10.015487670898438
+    wrist_flex.pos: 3.750591278076172
+    wrist_roll.pos: 2.120461940765381
+    gripper.pos: 11.423528671264648
+  Step: 430/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 8.30575942993164
+    shoulder_lift.pos: 7.490879058837891
+    elbow_flex.pos: -14.633674621582031
+    wrist_flex.pos: 10.927955627441406
+    wrist_roll.pos: 4.198231220245361
+    gripper.pos: 15.804996490478516
+  Step: 440/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 9.060519218444824
+    shoulder_lift.pos: 8.482257843017578
+    elbow_flex.pos: -15.11469841003418
+    wrist_flex.pos: 14.000057220458984
+    wrist_roll.pos: 6.5093889236450195
+    gripper.pos: 17.46895980834961
+  Step: 450/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -0.16502809524536133
+    shoulder_lift.pos: 3.272991180419922
+    elbow_flex.pos: -5.6428070068359375
+    wrist_flex.pos: 1.9345817565917969
+    wrist_roll.pos: 3.011627197265625
+    gripper.pos: 12.037078857421875
+  Step: 460/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: 1.0520668029785156
+    shoulder_lift.pos: 17.78816032409668
+    elbow_flex.pos: -15.568531036376953
+    wrist_flex.pos: 3.914684295654297
+    wrist_roll.pos: 9.444900512695312
+    gripper.pos: 11.211166381835938
+  Step: 470/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -1.0307517051696777
+    shoulder_lift.pos: 19.794279098510742
+    elbow_flex.pos: -16.410377502441406
+    wrist_flex.pos: 5.884487152099609
+    wrist_roll.pos: 13.81821060180664
+    gripper.pos: 14.627396583557129
+  Step: 480/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -4.5119194984436035
+    shoulder_lift.pos: 24.786823272705078
+    elbow_flex.pos: -18.447154998779297
+    wrist_flex.pos: 7.242092132568359
+    wrist_roll.pos: 14.933330535888672
+    gripper.pos: 14.863370895385742
+  Step: 490/500
+    action is dict with keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos']
+    shoulder_pan.pos: -7.015096187591553
+    shoulder_lift.pos: 34.50938034057617
+    elbow_flex.pos: -21.621044158935547
+    wrist_flex.pos: 10.511478424072266
+    wrist_roll.pos: 15.420578002929688
+    gripper.pos: 15.133413314819336
+  Episode 1 完成！
+机器人已断开连接

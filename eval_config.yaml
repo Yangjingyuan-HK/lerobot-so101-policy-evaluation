@@ -1,0 +1,32 @@
+#eval_config.yaml
+# 永久配置SO-101 机械臂主从评估任务
+# 1. 机器人(从臂) 配置
+robot:
+type: so101_follower
+port: COM7
+id: my_awesome_follower_arm
+disable_torque_on_disconnect: true # 安全设置,断开时卸力
+# 摄像头配置(两个摄像头)
+cameras:
+side:
+type: opencv
+index_or_path: 0
+width: 640
+height: 480
+fps: 30
+fourcc: MJPG
+front:
+type: opencv
+index_or_path: 1
+width: 640
+height: 480
+fps: 30
+fourcc: MJPG
+# 2. 机器人数据集配置
+dataset:
+repo_id: WT/eval_test
+single_task: "Grab the screwdriver"
+# 3. 预训练模模型配置
+policy:
+path: outputs/train/act_so101_test/checkpoints/020000/pretrained_model
+display_data: true

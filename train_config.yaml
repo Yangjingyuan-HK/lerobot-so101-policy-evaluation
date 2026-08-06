@@ -1,0 +1,28 @@
+# train_config.yaml
+# 1. 数据集配置
+dataset:
+repo_id: WT/test
+root: E:/WT/dataset
+# 2. ACT 策略配置(核心修正)
+policy:
+type: act
+# --- 关键修正:当前版本仅支持单步观测---
+n_obs_steps: 1 # --- 强制使用GPU 进行训练--device: cuda # --- 模型架构参数--dim_model: 512 n_heads: 8 dim_feedforward: 2048 n_encoder_layers: 8 n_decoder_layers: 8 # --- 序列与动作参数--chunk_size: 100 n_action_steps: 50 # --- 优化与训练--optimizer_lr: 1.0e-4 optimizer_weight_decay: 1.0e-4 use_amp: true push_to_hub: false # 从2 改为1,以兼容当前LeRobot 版本 # 显式指定,覆盖默认的'None',确保使用RTX 3050 # 启用自动混合精度,可节省显存并加速(RTX 3050 支持)
+# 3. 训练流程参数
+output_dir: outputs/train/act_so101_test
+job_name: act_so101_test
+num_workers: 2
+batch_size: 8 # 如果启用混合精度后仍显存不足,可降低到4
+steps: 300000
+eval_freq: 5000
+log_freq: 100
+save_checkpoint: true
+save_freq: 10000
+resume: false
+seed: 42
+# 4. 其他配置
+eval:
+n_episodes: 10
+batch_size: 10 # 这行是关键!必须存在且值<= n_episodes
+wandb:
+enable: true

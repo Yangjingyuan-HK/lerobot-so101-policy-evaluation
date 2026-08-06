@@ -1,0 +1,572 @@
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 00000236c2383700] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c2370940] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:11:32 ls\utils.py:143 Recording episode 38
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:11:52 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 605/605 [00:00<00:00, 3633.76 examples/s]
+Svt[info]: ---------------------------------S-v-t-[-i-n-f-o-]-:-
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-v-e-r-s-i-o-n-]-:-     -S-V-T---A-V-1- -E-n-c-o-d-e-r- -L
+iSbv tv[3i.n0f.o0]
+:S vStV[Ti n[fvoe]r:s iSoVnT] :[        bSuViTl-dA]V 1  :E      nGcCoCd e1r5 .L1i.b0    v 36.40 .b0i
+tS
+vStv[ti[nifnof]o:] :S VLTI B[ bBuuiilldd]  d a:t        eG:C CJ u1l5 . 13. 02   0 2654  0b3i:t1
+7S:v5t4[
+iSnvfto[]i:n fLoI]B:  B-u-i-l-d- -d-a-t-e-:- -J-u-l- - -3- -2-0-2-5- -0-3-:-1-7-:-5-4-
+-S-v-t-[-i-n-f-o-]-:-
+-----------------------------------S-v-t-[--w-a-r-n
+]: Preset M12 is mapped to M10.
+Svt[infoS]v:t [wLaervne]l:  oPfr ePsaerta lMl1e2l iissm :m a5p
+pSevdt [tion fMo1]0:.
+NuSmvbte[ri noffo ]P:P CLSe v7e6l
+ oSfv tP[airnaflol]e:l i[sams:m  5l
+eSvvetl[ ionnf os]y:s tNeumm b:e ru po ft oP PaCvSx 57162
+icSlv]t
+[Sivntf[oi]n:f o[]a:s m[ alsemv elle voenl  ssyeslteecmt e:d  u:p  utpo  taov xa5v1x25i1c2li]c
+lS]v
+tS[vitn[fion]f:o ][:a s-m- -l-e-v-e-l- -s-e-l-e-c-t-e-d- -:- -u-p- -t-o- -a-v-x-5-1-2-i-c-l-]-
+-S-v-t-[-i-n-f
+oS]v:t [-i-n-f-o-]-:- -S-V-T- -[-c-o-n-f-i-g-]-:- -m-a-i-n- -p-r-o-f-i-l-e-     -t-i-e-r- -(-a-u-t
+oS)v    tl[eivneflo ](:a uStVoT)
+[Scvotn[fiingf]o:] :m aSiVnT  p[rcoofniflieg    ]t:i ewri d(tahu t/o )h eliegvhetl  /( afuptso )n
+uSmvetr[aitnofro ]/:  fSpVsT  d[ecnoonmfiinga]t:o rw i  d       t:h  6/4 0h e/i g4h8t0  //  f3p0s  /n u1m
+eSrvatt[oirn f/o ]f:p sS VdTe n[ocmoinnfaitgo]r:        b       i:t -6d4e0p t/h  4/8 0c o/l o3r0  f/o r1m
+aStv t  [       i       n       f       o:] :8  S/V TY U[Vc4o2n0f
+iSgv]t:[ ibnifto-]d:e pStVhT  /[ ccoonlfoirg ]f:o rpmraets e    t               /               t:u n8e  //  YpUrVe4d2 0s
+Stvrtu[citn f   o       ]       :               S:V T1 0[ c/o nPfSiNgR] :/  prraensdeotm  /a ctcuenses
+/S vptr[eidn fsot]r:u cStV T            [       c       o       n:f i1g0] :/  gPoSpN Rs i/z er a/n dmoimn ia-cgcoeps ss
+iSzvet [/i nkfeoy]-:f rSaVmTe  [tcyopnef i      g       ]       ::  g2o p/  s1i6z e/  /k emyi nfir-agmoep
+ Ssvitz[ei n/f ok]e:y -SfVrTa m[ec otnyfpieg ]  :               B:R C2  m/o d1e6  //  rkaetye  ffraacmteo
+rS v    t       [       i       n       f:o ]C:R FS V/T  3[0c o
+nSfvitg[]i:n fBoR]C:  SmVoTd e[ c/o nrfaitge] f:a cAtQo rm o    d       e               /        :v aCrRiFa n/c e3 0b o
+oSsvtt [        i       n       f               o:] :2  S/V T0
+[Scvotn[fiingf]o:] :A QS VmTo d[ec o/n fviagr]i:a nschea rbponoessts    /               l       u       m:i n2a n/c e0-
+bSavste[di nQfPo ]b:i aSsV T            [       c:o n0f i/g ]0:
+ Ssvhta[ripnnfeos]s:  /S vltu[miinnfaon]c:e --b-a-s-e-d- -Q-P- -b-i-a-s- -      -       -       -:- -0- -/- -0-
+-S-v--t-[-i-n-f-o-]-:- -S-v-t-[-i-n
+fo]: -------------------------------------------
+[mp4 @ 00000236c2382100] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c236fe40] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:12:16 ls\utils.py:143 Recording episode 39
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:12:32 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 484/484 [00:00<00:00, 3375.39 examples/s]
+SvStv[ti[nifnof]o:] :- ------------------------------------------------------------------------------------
+-S
+vStv[ti[nifnof]o:] :S VSTV T[ v[evresrisoino]n:]        :S      VSTV-TA-VA1V 1E nEcnocdoedre rL iLbi bv 3v.30..00.
+0S
+vStv[ti[nifnof]o:] :S VSTV T[ b[ubiulidl]d ]  :         :G      CGCC C1 51.51..10.      0       6 46 4b ibti
+tS
+vStv[ti[nifnof]o:] :L LIIBB  BBuuiilldd  ddaattee::  JJuull    33  22002255  0033::1177::5544
+
+SSvvtt[[iinnffoo]]::  --------------------------------------------------------------------------------------
+
+SvStv[tw[awranr]n:] :P rPerseeste tM 1M21 2i si sm apmpaepdp etdo  tMo1 0M.1
+0.S
+vtS[vitn[fion]f:o ]L:e vLeelv eolf  oPfa rPaalrlaelllieslmi:s m5:
+ S5v
+tS[vitn[fion]f:o ]N:u mNbuemrb eorf  oPfP CPSP C7S6
+76S
+vtS[vitn[fion]f:o ][:a s[ma slme vleelv eoln  osny sstyesmt e:m  u:p  utpo  taov xa5v1x25i1c2li]c
+lS]v
+tS[vitn[fion]f:o ][:a s[ma slme vleelv esle lseeclteecdt e:d  u:p  utpo  taov xa5v1x25i1c2li]c
+lS]v
+tS[vitn[fion]f:o ]-:- ----------------------------------------------------------------------------------
+S-v-t
+[Sivntf[oi]n:f oS]V:T  SV[Tc o[ncfoingf]i:g ]m:a imna ipnr opfriolfei   ltei    etri e(ra u(taou)t      ol)e    vleelv e(la u(taou)t
+oS)v
+tS[vitn[fion]f:o ]S:V TS V[Tc o[ncfoingf]i:g ]w:i dwtihd t/h  h/e ihgehitg h/t  f/p sf pnsu mneurmaetroart o/r  f/p sf pdse ndoemnionmaitnoart o        r        :              6:4 06 4/0  4/8 04 8/0  3/0  3/0  1/
+ S1v
+tS[vitn[fion]f:o ]S:V TS V[Tc o[ncfoingf]i:g ]b:i tb-idte-pdteh p/t hc o/l ocro lfoorr mfaotr m a       t                                       :               8        :/  8Y U/V 4Y2U0V
+4S2v0t
+[Sivntf[oi]n:f oS]V:T  S[VcTo n[fciogn]f:i gp]r:e sperte s/e tt u/n et u/n ep r/e dp rsetdr uscttr u    c       t                                       :               1       0:  /1 0P S/N RP S/N Rr a/n droamn daocmc eascsc
+eSsvst
+[Sivntf[oi]n:f oS]V:T  S[VcTo n[fciogn]f:i gg]o:p  gsoipz es i/z em i/n im-ignoip- gsoipz es i/z ek e/y -kferya-mfer atmyep et y        p       e        :              2        :/  21 6/  /1 6k e/y  kferya mfer
+aSmvet
+[Sivntf[oi]n:f oS]V:T  S[VcTo n[fciogn]f:i gBR]C:  BmRoCd em o/d er a/t er aftaec tfoarc t      o       r                                       :               C       R:F  C/R F3 0/
+3S0v t
+[Sivntf[oi]n:f oS]V:T  S[VcTo n[fciogn]f:i gA]Q:  mAoQd em o/d ev a/r ivaanrciea nbcoeo sbto o  s       t                                       :               2        :/  20
+/S v0t
+[Sivntf[oi]n:f oS]V:T  S[VcTo n[fciogn]f:i gs]h:a rsphnaerspsn e/s sl u/m ilnuamnicnea-nbcaes-ebda sQePd  bQiPa sb i    a       s        :              0        :/  00
+/S v0t
+[Sivntf[oi]n:f oS]v:t [Sivntf[oi]n:f o-]-:- -------------------------------------------------------------------------------
+----
+[mp4 @ 00000236c2361880] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c4a79440] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:12:54 ls\utils.py:143 Recording episode 40
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:13:07 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 379/379 [00:00<00:00, 3523.56 examples/s]
+Svt[info]: -------S-v-t-[-i-n-f-o-]-:- ----------------------------------------------------
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-v
+eSrvsti[oinn]f:o        ]S:V TS-VATV 1[ vEenrcsoidoenr] :L      ibS VvT3-.A0V.10
+ESnvcto[dienrf oL]i:b  SvV3T. 0[.b0u
+iSlvdt][ i n:f  oG]C:C  S1V5T.1 .[0b    u i6l4d ]b i t:
+        SGvCtC[ i1n5f.o1].:0    L I6B4  Bbuiitl
+dS vdta[tien:f o]J:u lL I B3  B2u0i2l5d  0d3a:t1e7:: 5J4u
+lS v t3[ i2n0f2o5] :0 3-:-1-7-:-5-4-
+-S-v-t-[-i-n-f-o-]-:- --------------------------------------------------
+--------------S-v-t-[-w
+arn]: Preset M12 is maSpvpte[dw atron ]M:1 0P.r
+eSsvett[ iMn1f2o ]i:s  Lmeavpeple do ft oP aMr1a0l.l
+elSivstm[:i n5f
+oS]v:t [Lienvfeol] :o fN uPmaberra lolfe lPiPsCmS:  756
+
+SvStv[ti[nifnof]o:] :N u[mabsemr  loefv ePlP CoSn  7s6y
+stSevmt [:i nufpo ]t:o  [aavsxm5 1l2eivecll ]o
+nS vsty[sitnefmo ]::  u[pa stmo  laevvxe5l1 2sieclle]c
+tSevdt [:i nufpo ]t:o  [aavsxm5 1l2eivcell]
+sSevlte[citnefdo ]::  u-p- -t-o- -a--v-x-5-1-2-i-c-l-]-
+-S-v-t-[-i-n-f-o-]-:- ------------------------------
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-c-o-n-f-i-g-]-:- -m-a-i
+nS vptr[oifnifloe]      :t iSeVrT  ([acuotnof)i gl]e:v emla i(na uptroo)f
+iSlvet  [tiinefro ](:a uStVoT)  [lceovnefli g(]a:u twoi)d
+tShv t/[ ihnefiog]h:t  S/V Tf p[sc onnufmiegr]a:t owri d/t hf p/s  dheeniogmhitn a/t ofrp s             n:u m6e4r0a t/o r4 8/0  /f p3s0  d/e n1o
+mSivnta[tionrf o        ]       ::  S6V4T0  [/c o4n8f0i g/] :3 0b i/t -1d
+eSpvtth[ i/n fcoo]l:o rS VfTo r[mcaotn f        i       g       ]       :        :b i8t -/d eYpUtVh4 2/0
+cSovlto[ri nffoor]m:a tS V      T               [       c       o:n f8i g/] :Y UpVr4e2s0e
+tS v/t [tiunnfeo ]/:  pSrVeTd  [sctornufcitg ]  :               p       r       e:s e1t0  //  tPuSnNeR  //  prraendd osmt raucccte s    s
+        S       v       t:[ i1n0f o/] :P SSNVRT  /[ croannfdiogm] :a cgcoeps ss
+iSzvet [/i nmfion]i:- gSoVpT  s[iczoen f/i gk]e:y -gforpa msei ztey p/e  m      i       n       i:- g2o p/  s1i6z e/  /k ekye yf-rfarmaem
+eS vtty[pien f  o       ]       ::  S2V T/  [1c6o n/f ikge]y:  fBrRaCm em
+oSdvet [/i nrfaot]e:  fSaVcTt o[rc o    n       f       i       g       ]::  CBRRFC  /m o3d0e
+/S vrta[tien ffoa]c:t oSrV T            [       c       o       n:f iCgR]F:  /A Q3 0m o
+dSev t/[ ivnafroi]a:n cSeV Tb o[ocsotn f        i       g       ]       :        :A Q2  m/o d0e
+ S/v tv[airnifaon]c:e  SbVoTo s[tc o    n       f       i       g       ]::  2s h/a r0p
+nSevsts[ i/n flou]m:i nSaVnTc e[-cboansfeidg ]Q:P  sbhiaarsp n  e       s       s:  /0  /l u0m
+iSnvatn[cien-fboa]s:e dS vQtP[ ibnifaos] :              -       -:- -0- -/- -0-
+-S-v-t-[-i-n-f-o-]-:- -S-v-t-[-i-n-f-o-]-:- ------------------------
+-------------------------------
+[mp4 @ 00000236c23703c0] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c5d95680] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:13:29 ls\utils.py:143 Recording episode 41
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:13:44 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 458/458 [00:00<00:00, 3511.68 examples/s]
+SvtS[vitn[fion]f:o ]-:- ----------------------------------------------------------------------------------
+-S-v
+tS[vitn[fion]f:o ]S:V TS V[Tv e[rvseirosni]o:n  ]S:V    TS-VATV-1A VE1n cEondceord eLri bL ivb3 .v03..00
+.S0v
+tS[vitn[fion]f:o ]S:V TS V[Tb u[ibludi]l d ]:    G:C    CG C1C5 .115..01        . 06    4  6b4i tb
+iStv
+tS[vitn[fion]f:o ]L:I BL IBBu iBludi ldda tdea:t eJ:u lJ u l3   230 2250 2053 :0137::1574:
+5S4v
+tS[vitn[fion]f:o ]-:- -----------------------------------------------------------------------------------
+-
+Svt[warSnv]t:[ wParrens]e:t  PMr1e2s eits  Mm1a2p piesd  mtaop pMe1d0 .t
+o SMv1t[0i.n
+foS]v:t [Lienvfeol] :o fL ePvaerla lolfe lPiasrma:l l5e
+lSivstm[:i n5f
+oS]v:t [Niunmfboe]r:  oNfu mPbPeCrS  o7f6
+ PSPvCtS[ i7n6f
+o]S:v t[[aisnmf ol]e:v e[la somn  lseyvsetle mo n:  suyps tteom  a:v xu5p1 2tioc la]v
+xS5v1t2[iincflo]]
+:S v[ta[simn floe]v:e l[ asseml elcetveedl  :s eulpe cttoe da v:x 5u1p2 itcol ]a
+vSxv5t1[2iincflo]]
+:S v-t-[-i-n-f-o-]-:- --------------------------------------------------------------------
+-S-v-t-[-i-n-f-o-]
+:S vStV[Ti [ncfoon]f:i gS]V:T  m[acionn fpirgo]fi:l em  atiine rp r(oafuitloe)          tlieevre l( a(uatuot)o  )l
+eSvvetl[ i(nafuot]o:)
+SSVvTt [[icnofnof]i:g ]S:V Tw i[dctohn f/i gh]e:i gwhitd t/h  f/p sh eniugmhetr a/t ofrp s/  nfupmse rdaetnoorm i/n aftposr  d  e       n:o m6i4n0a t/o r4 8    0        :/  63400  //  14
+8S0v t/[ i3n0f o/] :1
+SSVvTt [[icnofnof]i:g ]S:V Tb i[tc-odnefpitgh] :/  bciotl-odre pftohr m/a tc o  l       o       r               f:o r8m a/t  Y  U       V       4       2       0:
+ S8v t/[ iYnUfVo4]2:0
+SSVvTt [[icnofnof]i:g ]S:V Tp r[ecsoentf i/g ]t:u nper e/s eptr e/d  tsutnreu c/t  p    r       e       d               s:t r1u0c t/    P       S       N       R        :/  1r0a n/d oPmS NaRc c/e srsa
+nSdvotm[ iancfcoe]s:s
+SSVvTt [[icnofnof]i:g ]S:V Tg o[pc osnifzieg ]/:  mgionpi -sgiozpe  s/i zmei n/i -kgeoyp- fsriazmee  /t ykpeey -        f       r       a:m e2  t/y p1e6        /               k:e y2  f/r a1m6e
+/S vkt[eiyn ffor]a:m eS
+VSTv t[[cionnffoi]g:] :S VBTR C[ cmoondfei g/] :r aBtReC  fmaocdteo r/          r       a       t       e        :f aCcRtFo r/          3       0
+        S:v tC[RiFn f/o ]3:0  S
+VSTv t[[cionnffoi]g:] :S VATQ  [mcoodnef i/g ]v:a rAiQa nmcoed eb o/o svta r    i       a       n       c       e:  b2o o/s t0
+        S       v       t       [       i:n f2o ]/:  0S
+VSTv t[[cionnfof]i:g ]S:V Ts h[acropnnfeisgs] :/  slhuamripnnaenscse -/b alsuemdi nQaPn cbei-absa s     e       d        :Q P0  b/i a0s
+ S      v       t       [:i n0f o/] :0
+SSvvtt[[iinnffoo]]::  -S-v-t-[-i-n-f-o-]-:- ----------------------------------------------------------------
+-----------
+[mp4 @ 00000236c49c0340] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c2382100] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:14:05 ls\utils.py:143 Recording episode 42
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:14:21 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 455/455 [00:00<00:00, 3317.08 examples/s]
+Svt[info]: ----------S-v-t-[-i-n-f-o-]-:- ----------------------------------------------
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-v-e-r-s
+iSovnt][:i      nSfVoT]-:A VS1V TE n[cvoedresri oLni]b:         vS3V.T0-.A0V
+1S vEtn[ciondfeor] :L iSbV Tv 3[.b0u.i0l
+dS]v t [:i      nGfCoC] :1 5S.V1T. 0[   b u6i4l db]i t
+:S      vGtC[Ci n1f5o.]1:. 0L   I B6 4B ubiiltd
+ Sdvatt[ei:n fJou]l:   L3I B2 0B2u5i l0d3 d:a1t7e::5 4J
+uSlv t [3i n2f0o2]5:  0-3-:-1-7-:-5-4-
+-S-v-t-[-i-n-f-o-]-:- ------------------------------------------------
+-------------------
+Svt[warn]: PreSsvett[ wMa1r2n ]i:s  Pmraepspeetd  Mt1o2  Mi1s0 .m
+apSpvetd[ itnof oM]1:0 .L
+evSevlt [oifn fPoa]r:a lLleevleils mo:f  5P
+aSrvatl[lienlfios]m::  N5u
+mSbvetr[ ionff oP]P:C SN u7m6b
+er Sovft [PiPnCfSo ]7:6
+[asSmv tl[eivneflo ]o:n  [sayssmt elme v:e lu po nt os yasvtxe5m1 2:i culp]
+tSov ta[vixn5f1o2]i:c l[]a
+sSmv tl[eivneflo ]s:e l[eacstme dl e:v eulp  steol eacvtxe5d1 2:i culp]
+tSov ta[vixn5f1o2]i:c l-]-
+-S-v-t-[-i-n-f-o-]-:- ------------------------------------------------------------
+-S-v-t-[-i-n-f-o-]-:- -S-V
+TS v[tc[oinnffiog]]::  SmVaTi n[ cpornoffiigl]e:         tmiaeirn  (paruotfoi)l el      etvieelr  ((aauuttoo))
+        Slvetv[eiln f(aou]t:o )S
+VSTv t[[cionnffoi]g:] :S VwTi d[tcho n/f ihge]i:g hwti d/t hf p/s  hneuimgehrta t/o rf p/s  fnpusm edreantoomri n/a tfopr s             d:e n6o4m0i n/a t4o8r0          /        :3 06 4/0  1/
+ S4v8t0[ i/n f3o0] :/  S1V
+TS v[tc[oinnffiog]]::  SbViTt -[dceopntfhi g/] :c obliotr- dfeoprtmha t/        c       o       l       o       r:  f8o r/m aYtU V      4       2       0
+        S:v t8[ i/n fYoU]V:4 2S0V
+TS v[tc[oinnffiog]]::  SpVrTe s[ecto n/f itgu]n:e  p/r epsreetd  /s ttruuncet  /                p       r       e       d:  s1t0r u/c tP S      N       R               /        :r a1n0d o/m  PaScNcRe s/s
+rSavntd[oimn faoc]c:e sSsV
+TS v[tc[oinnffiog]]::  SgVoTp  [scioznef i/g ]m:i ngio-pg ospi zsei z/e  m/i nkie-yg-ofpr asmiez et y/p ek e    y       -       f:r a2m e/  t1y6p e/    k       e       y:  f2r a/m e1
+6 S/v tk[eiyn ffor]a:m eS
+VSTv t[[cionnffoi]g:] :S VBTR C[ cmoondfei g/] :r aBtReC  mfoadcet o/r  r       a       t       e               f:a cCtRoF r/   3       0
+        S:v tC[RiFn f/o ]3:0  S
+VSTv t[[cionnffoi]g:] :S VATQ  [mcoodnef i/g ]v:a rAiQa nmcoed eb o/o svta r    i       a       n       c       e:  b2o os/t  0
+        S       v       t       [:i n2f o/] :0
+SSVvTt [[icnofnof]i:g ]S:V Ts h[acropnnfeisgs] :/  slhuamripnnaenscse -/b alsuemdi nQaPn cbei-absa s    e       d        :Q P0  b/i a0s
+ S      v       t       [:i n0f o/] :0
+SSvvtt[[iinnffoo]]::  -S-v-t-[-i-n-f-o-]-:- ----------------------------------------------------------------
+-----------
+[mp4 @ 00000236c49bf2c0] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c49a4d80] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:14:42 ls\utils.py:143 Recording episode 43
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:14:56 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 425/425 [00:00<00:00, 3525.15 examples/s]
+Svt[info]S:v t-[-i-n-f-o-]-:- -----------------------------------------------------------------------
+-S-v-t-[-i-n-f
+oS]v:t [SiVnTf o[]v:e rSsViTo n[]v:e    rSsViTo-nA]V:1   SEVnTc-oAdVe1r  ELnicbo dve3r. 0L.i0b
+ Svv3t.[0i.n0f
+oS]v:t [SiVnTf o[]b:u iSlVdT]  [ b:u    iGlCdC]  1 5:.  1G.C0C    1654. 1b.i0t
+ S6v4t [biintf
+oS]v:t [iLnIfBo ]B:u iLlIdB  dBautiel:d  Jdualt e :3  J2u0l2 5  30 32:01275: 5043
+:S1v7t:[5i4n
+fSov]t:[ i-n-f-o-]-:- --------------------------------------------------------------------------
+------
+Svt[warn]: PresSevtt [Mw1a2r ni]s:  mParpepseedt  tMo1 2M 1i0s.
+mSavptp[eidn ftoo] :M 1L0e.v
+elS votf[ iPnafroa]l:l eLleivseml:  o5f
+ SPvatr[ailnlfeol]i:s mN:u m5b
+eSrv to[fi nPfPoC]S:  7N6u
+mbeSrv to[fi nPfPoC]S:  7[6a
+smS vlte[vienlf oo]n:  s[yasstme ml e:v eulp  otno s yasvtxe5m1 2:i culp]
+tSov ta[vixn5f1o2]i:c l[]a
+sSmv tl[eivneflo ]s:e l[eacstme dl e:v eulp  steol eacvtxe5d1 2:i culp]
+tSov ta[vixn5f1o2]i:c l-]-
+-S-v-t-[-i-n-f-o-]-:- ------------------------------------------------------------
+-S-v-t-[-i-n-f-o-]-:- -S-V
+TS v[tc[oinnffiog]]::  SmVaTi n[ cpornoffiigl]e:         tmiaeirn  (paruotfoi)l el      etvieelr  ((aauuttoo))
+        Slvetv[eiln f(oa]u:t oS)V
+TS v[tc[oinnffiog]]::  SwViTd t[hc o/n fhiegi]g:h tw i/d tfhp s/  nhuemiegrhatt o/r  f/p sf pnsu mdeernaotmoirn a/t ofrp s              d:e n6o4m0i n/a t4o8r0          /        : 3604 0/  /1
+4S8v0t [/i n3f0o ]/:  1S
+VSTv t[[cionnffoi]g:] :S VbTi t[-cdoenpftihg ]/:  cboilto-rd efpotrhm a/t  c    o       l       o       r        :f o8r m/a tY U        V       4       2       0
+:S v8t [/i nYfUoV]4:2 0S
+VSTv t[[cionnffoi]g:] :S VpTr e[sceotn f/i gt]u:n ep r/e sperte d/  stturnuec t/        p       r       e       d        :s t1r0u c/t  P        S       N       R               /:  r1a0n d/o mP SaNcRc e/s sr
+aSnvdto[mi nafcoc]e:s sS
+VSTv t[[cionnffoi]g:] :S VgTo p[ csoinzfei g/] :m ignopi -sgiozpe  s/i zmei n/i -kgeoyp- fsriazmee  /t ykpeey - f       r       a:m e2  t/y p1e6        /               k:e y2  f/r a1m6e
+/S vkte[yi nffroa]m:e
+SSVvTt [[icnofnof]i:g ]S:V TB R[Cc omnofdieg ]/:  rBaRtCe  mfoadcet o/r  r      a       t       e               f:a cCtRoFr  /  3       0
+        S:v tC[RiFn f/o ]3:0  S
+VSTv t[[cionnffoi]g:] :S VATQ  [mcoodnef i/g ]v:a rAiQa nmcoed eb o/o svta r    i       a       n       c       e:  b2o o/s t0
+        S       v       t       [       i:n f2o ]/:  0S
+VSTv t[[cionnffoi]g:] :S VsTh a[rcponnefsisg ]/:  lsuhmairnpannecses-b a/s eldu mQiPn abnicaes- b       a       s       e:d  0 Q/P  0b
+iaSsv t [       i       n:f o0] :/  S0
+vStv[ti[nifnof]o:] :- -S-v-t-[-i-n-f-o-]-:- --------------------------------------------------------------
+------------
+[mp4 @ 00000236c7d56340] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c498d040] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:15:20 ls\utils.py:143 Recording episode 44
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:15:33 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 376/376 [00:00<00:00, 3537.65 examples/s]
+Svt[info]: --------------------------------S-v-t-[-i-n-f-o-]-:- --
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-v-e-r-s-i-o-n-]-:-     -S-V-T---A-V-1- -E-n-c-o-d-e-r-
+LSivbt [vi3n.f0o.]0:
+ SSvVtT[ i[nvfeor]s:i oSnV]T:   [SbVuTi-lAdV]1   E:n    cGoCdCe r1 5L.i1b. 0v   3 .604. 0b
+iStv
+tS[vitn[fion]f:o ]S:V TL I[Bb uBiulidl]d   d:a  tGeC:C J u1l5 . 13. 02  0 2654  0b3i:t1
+7S:v5t4[
+iSnvfto[]i:n fLoI]B:  B-u-i-l-d- -d-a-t-e-:- -J-u-l- - -3- -2-0-2-5- -0-3-:-1-7-:-5-4-
+-S-v-t-[-i-n-f-o-]-:-
+-------------------------------------------
+Svt[warn]: Preset M12 is mapped to MS1v0t.[
+waSrvnt][:i nPfroe]s:e tL eMv1e2l  iosf  mPaaprpaeldl etloi sMm1:0 .5
+
+SSvvtt[[iinnffoo]]::  NLuemvbeelr  ooff  PPaPrCaSl l7e6l
+ismS:v t5[
+iSnvfto[]i:n f[oa]s:m  Nluemvbeelr  oonf  sPyPsCtSe m7 6:
+ upS vtto[ ianvfxo5]1:2 i[cals]m
+ Slvetv[eiln foon] :s y[satsemm  :l euvpe lt os ealvexc5t1e2di c:l ]u
+pS vtto[ ianvfxo5]1:2 i[cals]m
+ Slvetv[eiln fsoe]l:e c-t-e-d- -:- -u-p- -t-o- -a-v-x-5-1-2-i-c-l-]-
+-S-v-t-[-i-n-f-o-]-:- ------------------
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-c-o-n-f-i-g-]-:- -m-a-i-n- -p-r-o-f
+iSlvet  [tiinefro ](:a uStVoT)  [lceovnefli g(]a:u tmoa)i
+nS vptr[oifnifloe]      :t iSeVrT  ([acuotnof)i gl]e:v ewli d(tahu t/o )h
+eSivgth[ti n/f of]p:s  SnVuTm e[rcaotnofri g/] :f pwsi ddtehn o/m ihneaitgohrt          /        :f p6s4 0n u/m e4r8a0t o/r  3/0  f/p s1
+dSevnto[miinnfaot]o:r  S        V       T:  [6c4o0n f/i g4]8:0  b/i t3-0d e/p t1h
+ S/v tc[oilnofro ]f:o SrVmTa t[ c       o       n       f       i       g:] :8  b/i tY-UdVe4p2t0h
+S v/t [cionlfoor] :f oSrVmTa t[ c       o       n       f       i       g:] :8  p/r eYsUeVt4 2/0
+tSuvnte[ i/n fpor]e:d  SsVtTr u[ccto n  f       i       g       ]       ::  p1r0e s/e tP S/N Rt u/n er a/n dporme da csctersusc
+tS v    t       [       i       n       f:o ]1:0  S/V TP S[NcRo n/f irga]n:d ogmo pa csciezses
+/S vmti[niin-fgoo]p:  sSiVzTe  [/c oknefyi-gf]r:a mgeo pt yspiez e              /        :m i2n i/- g1o6p  /s ikzeey  /f rkaemye-
+fSrvatm[ei ntfyop]e:    S       V       T:  [2c o/n f1i6g ]/:  kBeRyC  fmroadmee
+/S vrta[tien ffoa]c:t oSrV T            [       c       o       n:f iCgR]F:  /B R3C0  m
+oSdvet [/i nrfaot]e:  fSaVcTt o[rc o    n       f       i       g       ]::  CARQF  m/o d3e0  /
+ Svvatr[iiannfcoe] :b oSoVsTt  [        c       o       n       f       i:g ]2:  /A Q0
+mSovdte[ i/n fvoa]r:i aSnVcTe  [bcooonsfti g    ]       :               s       h:a r2p n/e s0s
+ S/v tl[uimnifnoa]n:c eS-VbTa s[ecdo QnPf ibgi]a:s  s   h       a       r:p n0e s/s  0/
+ Slvutm[iinnafnoc]e:- bSavste[di nQfPo ]b:i a-s- -      -       -       -:- -0- -/- -0-
+-S-v-t-[-i-n-f-o-]-:- -S-v-t-[-i-n-f-o-]-:- ----------------
+-----------------------------------
+[mp4 @ 00000236c2360040] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c7d573c0] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:15:53 ls\utils.py:143 Recording episode 45
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:16:05 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 358/358 [00:00<00:00, 3518.76 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:       SVT-AV1 Encoder Lib v3.0.0
+Svt[info]: SVT [build]  :       GCC 15.1.0       64 bit
+Svt[info]: LIB Build date: Jul  3 2025 03:17:54
+Svt[info]: -------------------------------------------
+Svt[warn]: Preset M12 is mapped to M10.
+Svt[info]: Level of Parallelism: 5
+Svt[info]: Number of PPCS 76
+Svt[info]: [asm level on system : up to avx512icl]
+Svt[info]: [asm level selected : up to avx512icl]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile   tier (auto)     level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator               : 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / cSovlto[ri nffoor]m:a t- - -       -       -       -       -:- -8- -/- -Y-U-V-4-2-0-
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-c-o-n-f-i-g-]-:
+ Spvrte[sientf o/] :t uSnVeT  /[ vperresdi osnt]r:u     cStV T  -       A       V       1        :E n1c0o d/e rP SLNiRb  /v 3r.a0n.d0o
+mS vatc[ciensfso
+]S:v tS[ViTn f[ob]u:i lSdV]T   [:c      oGnCfCi g1]5:. 1g.o0p     s6i4z eb i/t
+mSivnti[-ignofpo ]s:i zLeI B/  Bkueiyl-df rdaamtee :t yJpule    3               2:0 225  /0 31:61 7/: 5k4e
+yS vftr[aimnef
+oS]v:t [-i-n-f-o-]-:- -S-V-T- -[-c-o-n-f-i-g-]-:- -B-R-C- -m-o-d-e- -/- -r-a-t-e- -f-a-c-t-o-r
+                                        : CRF S/v t3[0w a
+rSnv]t:[ iPnrfeos]e:t  SMV1T2  [icso nmfaipgp]e:d  AtQo  mMo1d0e.
+/ Svvatr[iiannfcoe] :b oLoesvte l               o       f               P:a r2a l/l e0l
+iSsvmt:[ i5n
+fSov]t:[ iSnVfTo ][:c oNnufmibge]r:  osfh aPrPpCnSe s7s6
+/ Slvutm[iinnafnoc]e:- b[aassemd  lQePv ebli aosn       s       y       s:t e0 m/  :0
+uSpv tt[oi nafov]x:5 1S2vitc[li]n
+fSov]t:[ i-n-fo-]-:- -[-a-s-m- -l-e-v-e-l- -s-e-l-e-c-t-e-d- -:- -u-p- -t-o- -a-v-x-5-1-2-i-c-l-]
+
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [config]: main profile   tier (auto)     level (auto)
+Svt[info]: SVT [config]: width / height / fps numerator / fps denominator               : 640 / 480 / 30 / 1
+Svt[info]: SVT [config]: bit-depth / color format                                       : 8 / YUV420
+Svt[info]: SVT [config]: preset / tune / pred struct                                    : 10 / PSNR / random access
+Svt[info]: SVT [config]: gop size / mini-gop size / key-frame type                      : 2 / 16 / key frame
+Svt[info]: SVT [config]: BRC mode / rate factor                                         : CRF / 30
+Svt[info]: SVT [config]: AQ mode / variance boost                                       : 2 / 0
+Svt[info]: SVT [config]: sharpness / luminance-based QP bias                    : 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 00000236c23896c0] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c4996a40] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:16:25 ls\utils.py:143 Recording episode 46
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:16:36 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 333/333 [00:00<00:00, 3545.85 examples/s]
+Svt[info]: -------------------------------------------
+SvtS[vitn[fion]f:o ]S:V T- -[-v-e-r-s-i-o-n-]-:--       -S-V-T---A-V-1- -E-n-c-o-d-e-r- -L-i-b- -v-3-.-0-.-0-
+-S-v-t
+[Sivntf[oi]n:f oS]V:T  S[VbTu i[lvde]r s i:o    nG]C:C   S1V5T.-1A.V01    E6n4c obdietr
+ SLvitb[ ivn3f.o0].:0
+LSIvBt [Biuniflod] :d aStVeT:  [Jbuuli l d3]  2 0:2     5G C0C3 :1157.:15.40
+        S v6t4[ ibnifto]:
+ S-v-t-[-i-n-f-o-]-:- -L-I-B- -B-u-i-l-d- -d-a-t-e-:- -J-u-l- - -3- -2-0-2-5- -0-3-:-17-:
+54
+Svt[info]: -----------------S-v-t-[-w-a-r-n-]-:- -P-r-e-s-e-t- -M-1-2- -i-s- -m-a
+pped to M10.
+Svt[info]: LeSvvetl[ woafr nP]a:r aPlrleesleits mM:1 25
+iSsv tm[aipnpfeod] :t oN uMm1b0e.r
+ Sovft [PiPnCfSo ]7:6
+LeSvvetl[ ionff oPa]r:a l[laeslmi slme:v e5l
+ Sovnt [siynsftoe]m:  :N uumpb etro  oafv xP5P1C2Si c7l6]
+
+SSvvtt[[iinnffoo]]::  [[aassmm  lleevveell  soenl escytsetde m:  :u pu pt ot oa vaxv5x1521i2cilc]l
+]S
+vStv[ti[nifnof]o:] :- -[-a-s-m- -l-e-v-e-l- -s-e-l-e-c-t-e-d- -:- -u-p- -t-o- -a-v-x-5-1-2-i-c-l-]-
+-S-v-t
+[Sivntf[oi]n:f o-]-:- -S-V-T- -[-c-o-n-f-i-g-]-:- -m-a-i-n- -p-r-o-f-i-l-e-     -t-i-e-r- -(-a-u-t-o-)- -l
+eSvvetl[ i(nafuot]o:)
+SSVvTt [[icnofnof]i:g ]S:V Tm a[icno npfriogf]i:l ew    itditehr  /( ahuetiog)h tl e/v eflp s( anuutmoe)r
+aStvotr[ i/n ffop]s:  dSeVnTo m[icnoantfoirg ]  :        :w i6d4t0h  //  4h8e0i g/h t3 0/  /f p1s
+ Snvutm[eirnaftoo]r:  /S VfTp s[ cdoennfoimgi]n:a tboirt -      d       e:p t6h4 0/  /c o4l8o0r  /f o3r0m a/t  1
+        S       v       t       [:i n8f o/] :Y USVV4T2 0[
+cSovntf[iign]f:o ]b:i tS-VdTe p[tchon f/i gc]o:l oprr efsoertm a/t  t   u       n       e               /:  p8r e/d  YsUtVr4u2c0t
+ S      v       t       [       i       n:f o1]0:  /S VPTS N[Rc o/n friagn]d:o mp raecsceets s/
+ Stvutn[ei n/f op]r:e dS VsTt r[uccotn f        i       g       ]       :        :g o1p0  s/i zeP S/N Rm i/ nria-ngdoopm  saiczcee s/s
+kSevyt-[firnafmoe] :t ySpVeT    [       c       o:n f2i g/] :1 6g o/p  kseiyz ef r/a mmei
+nSiv-tg[oipn fsoi]z:e  S/V Tk ey[-cfornafmieg ]t:yp eB R        C               m:o d2e  //  1r6a t/e  kfeayc tforra m  e
+        S       v       t:[ iCnRfFo ]/:  3S0V T
+ S[vcto[nifnifgo]]::  BSRVCT  m[ocdoen f/i gr]a:t eA Qf amcotdoer  /            v       a       r       i:a nCcReF  b/o o3s0t
+        S       v       t       [       i:n f2o ]/:  0S
+VSTv t[[cionnffoi]g:] :S VATQ  [mcoodnef i/g ]v:a rsihaanrcpen ebsoso s/t  l    u       m       i       n       a:n c2e -/b a0s
+eSdv tQ[Pi nbfioa]s:    S       V       T:  [0c o/n f0i
+gS]v:t [sihnafrop]n:e sSsv t/[ ilnufmoi]n:a n-c-e---b-a-s-e-d- -Q-P- -b-i-a-s- -        -       -       -:- -0- -/- -0-
+-S-v-t-[-i-n-f-o-]-:- --S-v-t
+[info]: -------------------------------------------
+[mp4 @ 00000236c5c40f80] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c4955ac0] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:16:57 ls\utils.py:143 Recording episode 47
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:17:16 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 557/557 [00:00<00:00, 3603.64 examples/s]
+Svt[info]:S v-t-[-i-n-f-o-]-:- --------------------------------------------------------------------
+-S-v-t-[-i-n-f-o-]
+:S vStV[Ti n[fvoe]r:s iSoVnT] :[        vSeVrTs-iAoVn1] :E      nScVoTd-eArV 1L iEbn cvo3d.e0r. 0L
+iSbv tv[3i.n0f.o0]
+:S vStV[Ti n[fbou]i:l dS]V T  :[        bGuCiCl d1]5 . 1:.      0G      C C6 41 5b.i1t.
+0S      v t6[4i nbfiot]
+:S vLtI[Bi nBfuoi]l:d  LdIaBt eB:u iJludl  d a3t e2:0 2J5u l0 3 :31 72:05245
+ S0v3t:[1i7n:f5o4]
+:S v-t-[-i-n-f-o-]-:- --------------------------------------------------------------------
+---------
+SSvvtt[[wwaarrnn]]::  PPrreesseett  MM1122  iiss  mmaappppeedd  ttoo  MM1100..
+
+SSvvtt[[iinnffoo]]::  LLeevveell  ooff  PPaarraalllleelliissmm::  55
+
+SSvvtt[[iinnffoo]]::  NNuummbbeerr  ooff  PPPPCCSS  7766
+
+SSvvtt[[iinnffoo]]::  [[aassmm  lleevveell  oonn  ssyysstteemm  ::  uupp  ttoo  aavvxx551122iiccll]]
+
+SSvvtt[[iinnffoo]]::  [[aassmm  lleevveell  sseelleecctteedd  ::  uupp  ttoo  aavvxx551122iiccl]l
+]S
+vStv[ti[nifnof]o:] :- ------------------------------------------------------------------------------------
+-S
+vStv[ti[nifnof]o:] :S VSTV T[ c[ocnofnifgi]g:] :m amiani np rporfoilfei ltei    etri e(ra u(taou)t      ol)e    vleelv e(la u(taou)t
+oS)v
+tS[vitn[fion]f:o ]S:V TS V[Tc o[ncfoingf]i: gw]i:d twhi d/t hh e/i ghheti g/h tf p/s  fnpusm enruamteorr a/to rf p/s  fdpesn odmeinnoamtionra t o       r:      6       4:0  6/4 04 8/0  4/8 03 0/  /3 01
+/S v1t
+S[vitn[fion]f:o ]S:V TS V[Tc o[ncfoingf]i:g ]b:i tb-idte-dpetpht h/  /c ocloolro rf ofromramta t                                                                        :        :8  8/  /Y UYVU4V2402
+0S
+vStv[ti[nifnof]o:] :S VSTV T[ c[ocnofnifgi]g:] :p rperseeste t/  /t utnuen e/  /p rperde ds tsrturcutc t                                                                        :  :1 01 0/  /P SPNSRN R/  /r arnadnodmo ma caccecsess
+sS
+vStv[ti[nifnof]o:] :S VSTV T[ c[ocnofnifgi]g:] :g ogpo ps isziez e/  /m imniin-ig-ogpo ps isziez e/  /k ekye-yf-rfarmaem et ytpyep e                                    :        :2  2/  /1 61 6/  /ke yk efyr afmrea
+mSev
+tS[vitn[fion]f:o ]S:V TS V[Tc o[ncfoingf]i:g ]B:R CB RmCo dmeo d/e  r/a trea tfea cftaocrt o    r                                                       :               C:R FC R/F  3/0  3
+0S v
+tS[vitnf[oi]n:f oS]V:T  S[VcTo n[fciogn]f:i AgQ] :m oAdQe  m/o dvea r/i avnacrei abnocoes tb o  o       s       t                       :               2               /:  02
+ S/v t0[
+iSnvfto[]i:n fSoV]T:  [ScVoTn f[icgo]n:f isgh]a:r psnheasrsp n/e slsu m/i nlaunmcien-abnacsee-db aQsPe db iQaPs  b      i       a       s:      0               /:  00
+ S/v t0[
+iSnvfto[]i:n fSov]t:[ iSnvfto[]i:n f-o-]-:- ------------------------------------------------------------------------------
+----
+[mp4 @ 00000236c48fc940] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c49d7840] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:17:41 ls\utils.py:143 Recording episode 48
+Right arrow key pressed. Exiting loop...
+INFO 2026-07-25 16:17:55 ls\utils.py:143 Reset the environment
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 406/406 [00:00<00:00, 3528.09 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [version]:S      vStV[Ti-nAfVo1] :E n-c-o-d-e-r- -L-i-b- -v-3-.-0-.-0-
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-b-u-i-l-d-]- - -:-
+GSCvCt [1i5n.f1o.]0:      S6V4T  b[ivte
+rSsvito[ni]n:f  oS]V:T -LAIVB1  BEuniclodd edra tLei:b  Jvu3l. 0 .30
+2S0v2t5[ i0n3f:o1]7:: 5S4V
+TS v[tb[uiinlfdo]] :  :-        -G-C-C- -1-5-.-1-.-0-   - -6-4- -b-i-t-
+-S-v-t-[-i-n-f-o-]-:- -L-I-B- -B-u-i-l-d- -d-a
+te: Jul  3 2025 03:17:54
+Svt[info]: ------------S-v-t-[-w-a-r-n-]-:- -P-r-e-s-e-t- -M-1-2- -i-s- -m-a-p-p-e-d-
+to M10.
+Svt[info]: Level of Parallelism: 5
+Svt[info]S:v tN[uwmabrenr] :o Pfr ePsPeCtS  M7162
+ is Smvatp[piendf ot]o:  M[1a0s.m
+ lSevvte[li nofno ]s:y sLteevme l:  oufp  Ptaor aalvlxe5l1i2simc:l ]5
+
+SSvvtt[[iinnffoo]]::  [Nausmmb elre voefl  PsPeClSe c7t6e
+d : Suvpt [tion faov]x:5 1[2aiscml ]l
+eSvvetl[ ionnf os]y:s t-e-m- -:- -u-p- -t-o- -a-v-x-5-1-2-i-c-l-]-
+-S-v-t-[-i-n-f-o-]-:- -[-a-s-m- -l-e-v-e-l
+ Ssvetl[eicntfeod] ::  SuVpT  t[oc oanvfxi5g1]2:i cmla]i
+nS vptr[oifnifloe]      :t i-e-r- -(-a-u-t-o-)- -l-e-v-e-l- -(-a-u-t-o-)-
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-c-o-n-f
+iSgv]t:[ iwnifdot]h:  /S VhTe i[gchotn f/i gf]p:s  mnauimne rpartoofri l/e      ftpise rd e(naoumtion)a tloerv e        l        :( a6u4t0o )/
+ S4v8t0[ i/n f3o0] :/  S1V
+TS v[tc[oinnffiog]]::  SwViTd t[hc o/n fhiegi]g:h tb i/t -fdpesp tnhu m/e rcaotloorr  /f ofrpmsa td e   n       o       m       i       n:a to8r  /             Y:U V644200
+/S v4t8[0i n/f o3]0:  /S V1T
+ S[vcto[nifnifgo]]::  pSrVeTs e[tc o/n ftiugn]e:  /b iptr-edde pstthr u/c tc o  l       o       r               f:o r1m0a t/    P       S       N       R        :/  8r a/n dYoUmV 4a2c0c
+eSsvst
+[Sivntf[oi]n:f oS]V:T  S[VcTo n[fciogn]f:i gp]r:e sgeotp  /s itzuen e/  /m ipnrie-dg ospt rsuiczte      /               k       e       y:- f1r0a m/e  PtSyNpRe  /              r a:n d2o m/  a1c6c e/s sk
+eSyv tf[rianmfeo
+]S:v tS[ViTn f[oc]o:n fSiVgT] :[ cgoonpf isgi]z:e  B/R Cm imnoid-eg o/p  rsaitzee  f/a ckteoyr- f       r       a       m       e        :t yCpReF      /               3:0  2
+ S/v t1[6i n/f ok]e:y  SfVrTa m[ec
+oSnvfti[gi]n:f oA]Q:  mSoVdTe  [/c ovnafriiga]n:c eB RbCo omsotd e              /               r       a:t e2  f/a c0t
+oSrv t  [       i       n       f       o:] :C RSFV T/  [3c0o n
+fSivg]t:[ isnhfaor]p:n eSsVsT  /[ clounmfiinga]n:c eA-Qb amsoedde  Q/P  vbairaisa n     c       e        :b o0o s/t  0
+        S       v       t       [:i n2f o/] :0
+SSvvtt[[iinnffoo]]::  SV-T- -[-c-o-n-f-i-g-]-:- -s-h-a-r-p-n-e-s-s- -/- -l-u-m-i-n-a-n-c-e---b-a-s-e-d- -Q-P-
+bias                    : 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 00000236c2360340] Starting second pass: moving the moov atom to the beginning of the file
+[mp4 @ 00000236c2362cc0] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:18:16 ls\utils.py:143 Recording episode 49
+Right arrow key pressed. Exiting loop...
+Map: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 412/412 [00:00<00:00, 3580.59 examples/s]
+Svt[info]: -------------------------------------------
+Svt[info]: SVT [veSrvsti[oinn]f:o       ]S:V T---A-V-1- -E-n-c-o-d-e-r- -L-i-b- -v-3-.-0-.-0-
+-S-v-t-[-i-n-f-o-]-:- -S-V-T- -[-b-u-i
+lSdv]t [ i:n    fGoC]C:  1S5V.T1 .[0v   e r6s4i obni]t:
+        SSvVtT[-iAnVf1o ]E:n cLoIdBe rB uLiilbd  vd3a.t0e.:0
+JSuvlt [i n3f o2]0:2 5S V0T3 :[1b7u:i5l4d
+]S v t:[        iGnCfCo ]1:5 .-1-.-0-   - -6-4- -b-i-t-
+-S-v-t-[-i-n-f-o-]-:- -L-I-B- -B-u-i-l-d- -d-a-t-e-:- -J-u-l-
+ 3 2025 03:17:54
+Svt[info]: -----------------------S-v-t-[-w-a-r-n-]-:- -P-r-e-s-e-t- -M-1-2
+ is mapped to M10.
+Svt[info]: Level of ParallelismS:v t5[
+wSavrtn[]i:n fPor]e:s eNtu mMb1e2r  iosf  mPaPpCpSe d7 6t
+o MS1v0t.[
+iSnvfto[]i:n f[oa]s:m  Lleevveell  oofn  Psayrsatlelme l:i sump:  t5o
+ Savvtx[5i1n2fioc]l:]
+NSuvmtb[eirn foof] :P P[CaSs m7 6l
+evSevlt [sienlfeoc]t:e d[ a:s mu pl etvoe la voxn5 1s2yisctle]m
+ S:v tu[pi ntfoo ]a:v x-5-1-2-i-c-l-]-
+-S-v-t-[-i-n-f-o-]-:- -[-a-s-m- -l-e-v-e-l- -s-e-l-e-c-t-e-d- -:- -u-p
+ Stvot [aivnxf5o1]2:i cSlV]T
+ S[vcto[nifnifg]o:] m:a i-n -p-r-o-f-i-l-e-     -t-i-e-r- -(-a-u-t-o-)- -l-e-v-e-l- -(-a-u-t-o-)-
+-S-v-t-[-i-n-f-o-]
+:S vStV[Ti n[fcoo]n:f iSgV]T:  [wciodntfhi g/] :h emiagihnt  p/r offpisl en     utmieerra t(oaru t/o )f plse vdeeln o(maiuntaot)o
+rS v    t       [:i n6f4o0] :/  S4V8T0  [/c o3n0f i/g ]1:
+ Swvitd[tihn f/o ]h:e iSgVhTt  [/c ofnpfsi gn]u:m ebriatt-odre p/t hf p/s  cdoelnoorm ifnoartmoart                              :               6       4:0  8/  /4 8Y0U V/4 2300
+ S/v t1[
+iSnvfto[]i:n fSoV]T:  [ScVoTn f[icgo]n:f ipgr]e:s ebti t/- dteupnteh  //  pcroeldo rs tfrourcmta t                                                                      :        :1 08  //  PYSUNVR4 2/0
+rSavntd[oimn faoc]c:e sSsV
+TS v[tc[oinnffiog]]::  SpVrTe s[ecto n/f itgu]n:e  g/o pp rseidz es t/r umcitn i        -       g       o       p        :s i1z0e  //  PkSeNyR- f/r armaen dtoymp ea c  c       e s:s
+2S v/t [1i6n f/o ]k:e yS VfTr a[mceo
+nSfvitg[]i:n fgoo]p:  sSiVzTe  /[ cmoinnfii-gg]o:p  BsRiCz em o/d ek e/y -rfartaem ef atcytpoer                                                 :               2:  /C R1F6  //  3k0e y
+ Sfvrta[mien
+fSov]t:[ iSnVfTo ][:c oSnVfTi g[]c:o nAfQi gm]o:d eB R/C v amroidaen c/e  rbaotoes tf a c       t       o       r        :              2               /        :0
+CSRvFt [/i n3f0o ]
+:S vStV[Ti n[fcoo]n:f iSgV]T:  [schoanrfpinge]s:s  A/Q  lmuomdien a/n cvea-rbiaasnecde  QbPo obsita s                                                           ::  02  //  00
+
+SSvvtt[[iinnffoo]]::  SSvVtT[ i[ncfoon]f:i g-]-:- -s-h-a-r-p-n-e-s-s- -/- -l-u-m-i-n-a-n-c-e---b-a-s-e-d- -Q-P- -b-i-a-s- -     -       -       -:
+ 0 / 0
+Svt[info]: Svt[info]: -------------------------------------------
+[mp4 @ 00000236c2371440] Starting second pass: moving the moov atom to the beginning of the file
+INFO 2026-07-25 16:18:51 ls\utils.py:143 Stop recording
+INFO 2026-07-25 16:18:57 a_opencv.py:601 OpenCVCamera(2) disconnected.
+INFO 2026-07-25 16:18:58 a_opencv.py:601 OpenCVCamera(0) disconnected.
+INFO 2026-07-25 16:18:58 follower.py:240 my_awesome_follower_arm SOFollower disconnected.
+INFO 2026-07-25 16:18:58 o_leader.py:163 my_awesome_leader_arm SOLeader disconnected.
+INFO 2026-07-25 16:18:58 ls\utils.py:143 Exiting
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot>
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot>

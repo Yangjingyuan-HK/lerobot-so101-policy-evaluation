@@ -1,0 +1,169 @@
+# ============================================================
+# LeRobot 推理环境 - pip 依赖清单
+# 生成日期: 2026-08-03
+# 源机器: Windows 11 | Python 3.12.13 | PyTorch 2.11.0+cu128 | CUDA 12.8
+# ============================================================
+#
+# 使用方法 (二选一):
+#
+# 方式 A — 仅用 pip (需先手动装 ffmpeg):
+#   conda create -n lerobot python=3.12 -y
+#   conda activate lerobot
+#   conda install -c conda-forge ffmpeg=6.1.2 -y
+#   pip install -r requirements.txt
+#   pip install -e .
+#
+# 方式 B — 用 environment.yml 一键创建 (推荐):
+#   conda env create -f environment.yml
+#   conda activate lerobot
+#   pip install -e .
+#
+# 前提: 新电脑需有 NVIDIA GPU + CUDA 12.8 兼容驱动
+# ============================================================
+
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+# === PyTorch (CUDA 12.8) ===
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+torchcodec==0.11.1
+
+# === HuggingFace 生态 ===
+transformers==5.5.4
+datasets==4.8.5
+huggingface-hub==1.24.0
+accelerate==1.14.0
+tokenizers==0.22.2
+safetensors==0.8.0
+hf-xet==1.5.2
+
+# === LeRobot 核心依赖 ===
+draccus==0.10.0
+gymnasium==1.3.0
+deepdiff==8.6.2
+einops==0.8.2
+pyarrow==25.0.0
+pandas==2.3.3
+pyyaml==6.0.3
+pyyaml-include==1.4.1
+toml==0.10.2
+jsonlines==4.0.0
+num2words==0.5.14
+termcolor==3.3.0
+rerun-sdk==0.33.1
+foxglove-sdk==0.25.3
+wandb==0.27.2
+stable-baselines3==2.9.0
+
+# === 视觉/视频 ===
+opencv-python==5.0.0.93
+opencv-python-headless==4.13.0.92
+av==15.1.0
+pillow==12.2.0
+
+# === 策略专用 ===
+diffusers==0.35.2
+
+# === 硬件 SDK (SO-101) ===
+feetech-servo-sdk==1.0.0
+pyserial==3.5
+pyrealsense2==2.58.3.10794
+pynput==1.8.2
+
+# === 仿真环境 ===
+mujoco==3.11.0
+dm-control==1.0.44
+dm-env==1.6
+dm-tree==0.1.10
+labmaze==1.0.6
+glfw==2.10.2
+pyopengl==3.1.10
+etils==1.14.0
+
+# === 科学计算 ===
+numpy==2.2.6
+scipy==1.18.0
+networkx==3.6.1
+mpmath==1.3.0
+sympy==1.14.0
+cloudpickle==3.1.2
+
+# === 数据/工具 ===
+pydantic==2.13.4
+pydantic-core==2.46.4
+annotated-types==0.8.0
+annotated-doc==0.0.4
+typing-extensions==4.15.0
+typing-inspect==0.9.0
+typing-inspection==0.4.2
+mypy-extensions==1.1.0
+packaging==25.0
+platformdirs==4.11.0
+setuptools==78.1.0
+wheel==0.47.0
+cmake==4.1.3
+
+# === 网络/HTTP ===
+requests==2.34.2
+urllib3==2.7.0
+httpx==0.28.1
+httpcore==1.0.9
+h11==0.16.0
+aiohttp==3.14.3
+aiohappyeyeballs==2.7.1
+aiosignal==1.4.0
+frozenlist==1.8.0
+multidict==6.7.1
+yarl==1.24.5
+propcache==0.5.2
+anyio==4.14.2
+certifi==2026.6.17
+charset-normalizer==3.4.9
+idna==3.18
+
+# === 工具库 ===
+click==8.4.2
+typer==0.27.0
+rich==15.0.0
+pygments==2.20.0
+markdown-it-py==4.2.0
+mdurl==0.1.2
+tqdm==4.69.0
+colorama==0.4.6
+psutil==7.2.2
+filelock==3.29.0
+fsspec==2026.2.0
+dill==0.4.1
+multiprocess==0.70.19
+importlib-metadata==9.0.0
+zipp==4.1.0
+six==1.17.0
+python-dateutil==2.9.0.post0
+pytz==2026.2
+tzdata==2026.3
+attrs==26.1.0
+wrapt==2.3.0
+xxhash==3.8.1
+docopt==0.6.2
+shellingham==1.5.4
+mergedeep==1.3.4
+orderly-set==5.5.0
+smmap==5.0.3
+gitdb==4.0.12
+gitpython==3.1.57
+pyparsing==3.3.2
+pypdf==6.14.2
+lxml==6.1.1
+jinja2==3.1.6
+markupsafe==3.0.3
+regex==2026.7.19
+protobuf==7.35.1
+absl-py==2.5.0
+farama-notifications==0.0.6
+sentry-sdk==2.66.1
+
+# ============================================================
+# 注意: lerobot 包未包含在此文件中
+# 它以可编辑模式安装 (pip install -e .), 指向本地项目文件夹
+# 安装完以上依赖后, 在项目根目录运行: pip install -e .
+# ============================================================

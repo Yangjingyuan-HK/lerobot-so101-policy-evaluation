@@ -1,0 +1,153 @@
+%%{init: {'theme': 'neutral', 'themeVariables': {'fontFamily': 'Microsoft YaHei, sans-serif', 'fontSize': '14px', 'primaryColor': '#4F81BD', 'secondaryColor': '#C0504D', 'tertiaryColor': '#9BBB59', 'borderColor': '#666666', 'backgroundColor': '#FFFFFF', 'primaryTextColor': '#333333'}}}%%
+graph TD
+    subgraph 输入层 [输入层]
+        IMG[多视角相机图像<br/>224×224]
+        LANG[语言指令<br/>任务描述文本<br/>48 tokens]
+        STATE[机器人状态<br/>关节角度、末端位置等<br/>max 32维]
+    end
+
+    subgraph Prefix流 [Prefix 流 / VLM 流]
+        VISION_TOWER[SigLIP Vision Tower]
+        IMG_EMB[图像嵌入]
+        LANG_EMB[Gemma 2B Embedding Layer<br/>语言嵌入]
+    end
+
+    subgraph Suffix流 [Suffix 流 / 动作专家流]
+        STATE_PROJ[state_proj 线性层]
+        STATE_EMB[状态嵌入]
+        
+        NOISE[噪声动作]
+        TIME_STEP[时间步 t]
+        TIME_EMB[正弦余弦位置编码<br/>时间嵌入]
+        
+        ACTION_TIME_MLP[action_time_mlp<br/>(拼接时间嵌入)]
+        ACTION_EMB[动作嵌入]
+    end
+
+    subgraph Transformer [核心：共享注意力 Transformer<br/>18 层]
+        subgraph Layer1 [第 1 层]
+            VLM_L1[VLM 层<br/>Q/K/V]
+            EXPERT_L1[Expert 层<br/>Q/K/V]
+            CONCAT_L1[拼接 Q/K/V]
+            ATT_L1[统一注意力计算]
+            MLP_L1[MLP + 残差]
+        end
+        
+        subgraph LayerN [第 2~18 层]
+            VLM_LN[VLM 层...]
+            EXPERT_LN[Expert 层...]
+            CONCAT_LN[拼接...]
+            ATT_LN[注意力...]
+            MLP_LN[MLP...]
+        end
+        
+        FINAL_NORM[最终归一化]
+    end
+
+    subgraph Output [输出层]
+        ACTION_OUT_PROJ[action_out_proj 线性层]
+        V_T[速度场 v_t<br/>50步动作序列<br/>每步 max 32维]
+    end
+
+    subgraph FlowMatching [Flow Matching 机制]
+        TRAIN[训练阶段]
+        INFER[推理阶段]
+        
+        TRAIN_FORMULA1[x_t = t × noise + (1-t) × actions]
+        TRAIN_FORMULA2[u_t = noise - actions<br/>目标: 预测 u_t]
+        
+        INFER_FORMULA[从噪声开始<br/>10步欧拉积分去噪]
+    end
+
+    %% 数据流连接
+    IMG --> VISION_TOWER
+    VISION_TOWER --> IMG_EMB
+    
+    LANG --> LANG_EMB
+    
+    STATE --> STATE_PROJ
+    STATE_PROJ --> STATE_EMB
+    
+    NOISE --> ACTION_TIME_MLP
+    TIME_STEP --> TIME_EMB
+    TIME_EMB --> ACTION_TIME_MLP
+    ACTION_TIME_MLP --> ACTION_EMB
+
+    %% Prefix 流到 Transformer
+    IMG_EMB -->|Prefix Embeddings| VLM_L1
+    LANG_EMB -->|Prefix Embeddings| VLM_L1
+    
+    %% Suffix 流到 Transformer
+    STATE_EMB -->|Suffix Embeddings| EXPERT_L1
+    ACTION_EMB -->|Suffix Embeddings| EXPERT_L1
+
+    %% Transformer 内部连接
+    VLM_L1 --> CONCAT_L1
+    EXPERT_L1 --> CONCAT_L1
+    CONCAT_L1 --> ATT_L1
+    ATT_L1 --> MLP_L1
+    
+    MLP_L1 --> VLM_LN
+    MLP_L1 --> EXPERT_LN
+    
+    VLM_LN --> CONCAT_LN
+    EXPERT_LN --> CONCAT_LN
+    CONCAT_LN --> ATT_LN
+    ATT_LN --> MLP_LN
+    
+    MLP_LN --> FINAL_NORM
+
+    %% Transformer 输出
+    FINAL_NORM -->|Suffix Output| ACTION_OUT_PROJ
+    ACTION_OUT_PROJ --> V_T
+
+    %% Flow Matching 连接
+    TRAIN --> TRAIN_FORMULA1
+    TRAIN_FORMULA1 --> TRAIN_FORMULA2
+    TRAIN_FORMULA2 --> NOISE
+    
+    INFER --> INFER_FORMULA
+    INFER_FORMULA --> NOISE
+
+    %% 超参数标注
+    subgraph Params [关键超参数]
+        PARAM1[PaliGemma: Gemma 2B<br/>width=2048, depth=18]
+        PARAM2[Action Expert: Gemma 300M<br/>width=1024, depth=18]
+        PARAM3[chunk_size = 50]
+        PARAM4[inference_steps = 10]
+        PARAM5[支持 relative_actions 相对动作]
+    end
+
+    %% 样式
+    classDef input fill:#DAEEF3,stroke:#333,stroke-width:1px;
+    classDef prefix fill:#F2DCDB,stroke:#333,stroke-width:1px;
+    classDef suffix fill:#E2EFDA,stroke:#333,stroke-width:1px;
+    classDef transformer fill:#FFF2CC,stroke:#333,stroke-width:1px;
+    classDef output fill:#E1D5E7,stroke:#333,stroke-width:1px;
+    classDef flow fill:#FFE6CC,stroke:#333,stroke-width:1px;
+    classDef params fill:#F5F5F5,stroke:#999,stroke-width:1px;
+
+    class IMG,LANG,STATE input;
+    class VISION_TOWER,IMG_EMB,LANG_EMB prefix;
+    class STATE_PROJ,STATE_EMB,NOISE,TIME_STEP,TIME_EMB,ACTION_TIME_MLP,ACTION_EMB suffix;
+    class Layer1,LayerN,FINAL_NORM transformer;
+    class ACTION_OUT_PROJ,V_T output;
+    class FlowMatching,TRAIN,INFER,TRAIN_FORMULA1,TRAIN_FORMULA2,INFER_FORMULA flow;
+    class Params,PARAM1,PARAM2,PARAM3,PARAM4,PARAM5 params;
+
+    %% 图例
+    subgraph Legend [图例]
+        L1[输入层]
+        L2[Prefix 流]
+        L3[Suffix 流]
+        L4[Transformer]
+        L5[输出层]
+        L6[Flow Matching]
+    end
+
+    class L1 input;
+    class L2 prefix;
+    class L3 suffix;
+    class L4 transformer;
+    class L5 output;
+    class L6 flow;

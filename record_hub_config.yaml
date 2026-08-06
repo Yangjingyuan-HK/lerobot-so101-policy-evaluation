@@ -1,0 +1,39 @@
+# record_hub_config.yaml
+# 永久配置SO-101 机械臂主从录制任务
+# 1. 遥操作设备(主臂) 配置
+teleop:
+type: so101_leader
+port: COM22
+id: my_awesome_leader_arm
+# 2. 机器人(从臂) 配置
+robot:
+type: so101_follower
+port: COM7
+id: my_awesome_follower_arm
+disable_torque_on_disconnect: true # 安全设置,断开时卸力
+# 摄像头配置(两个摄像头)
+cameras:
+side:
+type: opencv
+index_or_path: 0
+width: 640
+height: 480
+fps: 30
+fourcc: MJPG
+front:
+type: opencv
+index_or_path: 1
+width: 640
+height: 480
+fps: 30
+fourcc: MJPG
+# 3. 数据集录制配置
+dataset:
+repo_id: luoxingtong/record_test
+num_episodes: 30
+single_task: "Catch the green oil board"
+push_to_hub: true
+episode_time_s: 60
+reset_time_s: 15
+display_data: true
+resume: false

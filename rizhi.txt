@@ -1,0 +1,820 @@
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> C:\Users\yangj\anaconda3\envs\lerobot\python.exe examples\tutorial\vqbet\vqbet_using_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: outputs/robot_learning_tutorial/vqbet_so101
+number of parameters: 26.00M
+Loading weights from local directory
+✓ VQ-VAE 已完成训练（动作离散化就绪）
+加载数据集元数据: WT/test
+加载预/后处理器: outputs/robot_learning_tutorial/vqbet_so101
+
+数据集 action 统计:
+  shoulder_pan.pos: mean=7.9651, std=12.0235, range=[-18.3297, 37.8462]
+  shoulder_lift.pos: mean=47.7416, std=50.8927, range=[-4.9231, 136.9670]
+  elbow_flex.pos: mean=-37.0514, std=36.2865, range=[-124.7033, 1.9780]
+  wrist_flex.pos: mean=54.9820, std=16.3344, range=[23.1648, 80.3956]
+  wrist_roll.pos: mean=7.0690, std=10.7787, range=[-27.6484, 35.5604]
+  gripper.pos: mean=8.7239, std=8.7286, range=[0.2477, 27.3328]
+
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+✓ 机械臂已连接
+
+开始推理: 1 个 episode, 每个 episode 最多 800 步
+按 Ctrl+C 可随时停止
+
+--- Episode 1/1 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-8.1319, 74.8571]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0039, 0.9098]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-1.0000, 1.0071]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0039, 0.9098]
+  [Step 0] 模型原始输出 (归一化): [[-0.3923340439796448, -0.4544717073440552, 0.5934721231460571, 0.15438702702522278, -0.5047692060470581, 0.5227614641189575]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[-1.2616024017333984, 33.779457092285156, -23.77172088623047, 56.19806671142578, -11.996881484985352, 20.869766235351562]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: -1.2616
+    shoulder_lift.pos: 33.7795
+    elbow_flex.pos: -23.7717
+    wrist_flex.pos: 56.1981
+    wrist_roll.pos: -11.9969
+    gripper.pos: 20.8698
+
+  [Step 1] 模型原始输出 (归一化): [[-0.4212961792945862, -0.43612927198410034, 0.5821493864059448, 0.08479127287864685, -0.511589765548706, 0.4796390235424042]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[-2.0750885009765625, 35.08076095581055, -24.488914489746094, 54.20655822753906, -12.212440490722656, 20.28577995300293]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: -2.0751
+    shoulder_lift.pos: 35.0808
+    elbow_flex.pos: -24.4889
+    wrist_flex.pos: 54.2066
+    wrist_roll.pos: -12.2124
+    gripper.pos: 20.2858
+
+  [Step 2] 模型原始输出 (归一化): [[-0.41393348574638367, -0.38356852531433105, 0.5606672167778015, -0.0009894073009490967, -0.5251219272613525, 0.4791821241378784]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[-1.8682861328125, 38.809688568115234, -25.84960174560547, 51.75190734863281, -12.640116691589355, 20.279592514038086]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: -1.8683
+    shoulder_lift.pos: 38.8097
+    elbow_flex.pos: -25.8496
+    wrist_flex.pos: 51.7519
+    wrist_roll.pos: -12.6401
+    gripper.pos: 20.2796
+
+  Step: 800/800
+  Episode 1 完成！
+✓ 机械臂已断开
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> C:\Users\yangj\anaconda3\envs\lerobot\python.exe examples\tutorial\vqbet\vqbet_using_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: outputs/robot_learning_tutorial/vqbet_so101
+number of parameters: 26.00M
+Loading weights from local directory
+✓ VQ-VAE 已完成训练（动作离散化就绪）
+加载数据集元数据: WT/test
+加载预/后处理器: outputs/robot_learning_tutorial/vqbet_so101
+
+数据集 action 统计:
+  shoulder_pan.pos: mean=7.9651, std=12.0235, range=[-18.3297, 37.8462]
+  shoulder_lift.pos: mean=47.7416, std=50.8927, range=[-4.9231, 136.9670]
+  elbow_flex.pos: mean=-37.0514, std=36.2865, range=[-124.7033, 1.9780]
+  wrist_flex.pos: mean=54.9820, std=16.3344, range=[23.1648, 80.3956]
+  wrist_roll.pos: mean=7.0690, std=10.7787, range=[-27.6484, 35.5604]
+  gripper.pos: mean=8.7239, std=8.7286, range=[0.2477, 27.3328]
+
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+✓ 机械臂已连接
+
+开始推理: 1 个 episode, 每个 episode 最多 800 步
+按 Ctrl+C 可随时停止
+
+--- Episode 1/1 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[0.5714, 75.7363]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0078, 0.9529]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-0.9810, 1.0143]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0078, 0.9529]
+  [Step 0] 模型原始输出 (归一化): [[-0.1931898295879364, -0.9534298181533813, 0.7758769989013672, 0.7965203523635864, 0.16274967789649963, 0.345613569021225]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[4.331941604614258, -1.6191530227661133, -12.21807861328125, 74.57295989990234, 9.099649429321289, 18.47073745727539]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: 4.3319
+    shoulder_lift.pos: -1.6192
+    elbow_flex.pos: -12.2181
+    wrist_flex.pos: 74.5730
+    wrist_roll.pos: 9.0996
+    gripper.pos: 18.4707
+
+  [Step 1] 模型原始输出 (归一化): [[-0.2036421000957489, -0.9577006101608276, 0.7615103721618652, 0.8011828660964966, 0.14702439308166504, 0.36930933594703674]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[4.038358688354492, -1.9221446514129639, -13.128067016601562, 74.70638275146484, 8.602663040161133, 18.791637420654297]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: 4.0384
+    shoulder_lift.pos: -1.9221
+    elbow_flex.pos: -13.1281
+    wrist_flex.pos: 74.7064
+    wrist_roll.pos: 8.6027
+    gripper.pos: 18.7916
+
+  [Step 2] 模型原始输出 (归一化): [[-0.21453957259655, -0.9440380930900574, 0.747498631477356, 0.7900848388671875, 0.1565711945295334, 0.39743366837501526]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[3.7322731018066406, -0.9528565406799316, -14.015586853027344, 74.38880157470703, 8.904382705688477, 19.17251205444336]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: 3.7323
+    shoulder_lift.pos: -0.9529
+    elbow_flex.pos: -14.0156
+    wrist_flex.pos: 74.3888
+    wrist_roll.pos: 8.9044
+    gripper.pos: 19.1725
+
+[ WARN:0@20.142] global cap_msmf.cpp:477 `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: -1072873822
+[ WARN:0@20.142] global cap_msmf.cpp:488 `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: -1072873822
+[ WARN:1@20.142] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.142] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.142] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.143] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.143] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.143] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.143] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.143] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.144] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.144] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.144] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@20.144] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+Exception in thread OpenCVCamera(0)_read_loop:
+Traceback (most recent call last):
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 452, in _read_loop
+    raw_frame = self._read_from_hardware()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 352, in _read_from_hardware
+    raise RuntimeError(f"{self} read failed (status={ret}).")
+RuntimeError: OpenCVCamera(0) read failed (status=False).
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yangj\anaconda3\envs\lerobot\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\yangj\anaconda3\envs\lerobot\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 469, in _read_loop
+    raise RuntimeError(f"{self} exceeded maximum consecutive read failures.") from e
+RuntimeError: OpenCVCamera(0) exceeded maximum consecutive read failures.
+✓ 机械臂已断开
+Traceback (most recent call last):
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\examples\tutorial\vqbet\vqbet_using_example_so101.py", line 212, in <module>
+    main()
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\examples\tutorial\vqbet\vqbet_using_example_so101.py", line 127, in main
+    obs = robot.get_observation()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\utils\decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\robots\so_follower\so_follower.py", line 194, in get_observation
+    obs_dict[cam_key] = cam.read_latest()
+                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\utils\decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 559, in read_latest
+    raise RuntimeError(f"{self} read thread is not running.")
+RuntimeError: OpenCVCamera(0) read thread is not running.
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> C:\Users\yangj\anaconda3\envs\lerobot\python.exe examples\tutorial\vqbet\vqbet_using_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: outputs/robot_learning_tutorial/vqbet_so101
+number of parameters: 26.00M
+Loading weights from local directory
+✓ VQ-VAE 已完成训练（动作离散化就绪）
+加载数据集元数据: WT/test
+加载预/后处理器: outputs/robot_learning_tutorial/vqbet_so101
+
+数据集 action 统计:
+  shoulder_pan.pos: mean=7.9651, std=12.0235, range=[-18.3297, 37.8462]
+  shoulder_lift.pos: mean=47.7416, std=50.8927, range=[-4.9231, 136.9670]
+  elbow_flex.pos: mean=-37.0514, std=36.2865, range=[-124.7033, 1.9780]
+  wrist_flex.pos: mean=54.9820, std=16.3344, range=[23.1648, 80.3956]
+  wrist_roll.pos: mean=7.0690, std=10.7787, range=[-27.6484, 35.5604]
+  gripper.pos: mean=8.7239, std=8.7286, range=[0.2477, 27.3328]
+
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+✓ 机械臂已连接
+
+开始推理: 1 个 episode, 每个 episode 最多 800 步
+按 Ctrl+C 可随时停止
+
+--- Episode 1/1 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-0.0440, 58.0659]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9333]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-0.9644, 0.9800]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9333]
+  [Step 0] 模型原始输出 (归一化): [[-0.2207586169242859, -1.0007911920547485, 0.9159798622131348, 0.2734742760658264, 0.25378870964050293, -0.21300740540027618]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[3.5575923919677734, -4.979208469390869, -3.3438720703125, 59.60578918457031, 11.976884841918945, 10.905597686767578]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: 3.5576
+    shoulder_lift.pos: -4.9792
+    elbow_flex.pos: -3.3439
+    wrist_flex.pos: 59.6058
+    wrist_roll.pos: 11.9769
+    gripper.pos: 10.9056
+
+  [Step 1] 模型原始输出 (归一化): [[-0.2248162031173706, -0.9955527186393738, 0.8957913517951965, 0.3025659918785095, 0.24505290389060974, -0.20394334197044373]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[3.443624496459961, -4.607564449310303, -4.622627258300781, 60.438262939453125, 11.700796127319336, 11.028347969055176]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: 3.4436
+    shoulder_lift.pos: -4.6076
+    elbow_flex.pos: -4.6226
+    wrist_flex.pos: 60.4383
+    wrist_roll.pos: 11.7008
+    gripper.pos: 11.0283
+
+  [Step 2] 模型原始输出 (归一化): [[-0.235443115234375, -0.9955794811248779, 0.8925163149833679, 0.3141830563545227, 0.2485194206237793, -0.15676093101501465]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[3.1451358795166016, -4.609463214874268, -4.8300628662109375, 60.77069091796875, 11.81035041809082, 11.667317390441895]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: 3.1451
+    shoulder_lift.pos: -4.6095
+    elbow_flex.pos: -4.8301
+    wrist_flex.pos: 60.7707
+    wrist_roll.pos: 11.8104
+    gripper.pos: 11.6673
+
+[ WARN:0@18.687] global cap_msmf.cpp:477 `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): OnReadSample() is called with error status: -1072873822
+[ WARN:0@18.687] global cap_msmf.cpp:488 `anonymous-namespace'::SourceReaderCB::OnReadSample videoio(MSMF): async ReadSample() call is failed with error status: -1072873822
+[ WARN:1@18.689] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.689] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.689] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.690] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.690] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.690] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.690] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.690] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.691] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.691] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.691] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+WARNING:lerobot.cameras.opencv.camera_opencv:Error reading frame in background thread for OpenCVCamera(0): OpenCVCamera(0) read failed (status=False).
+[ WARN:1@18.691] global cap_msmf.cpp:1816 CvCapture_MSMF::grabFrame videoio(MSMF): can't grab frame. Error: -1072873822
+Exception in thread OpenCVCamera(0)_read_loop:
+Traceback (most recent call last):
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 452, in _read_loop
+    raw_frame = self._read_from_hardware()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 352, in _read_from_hardware
+    raise RuntimeError(f"{self} read failed (status={ret}).")
+RuntimeError: OpenCVCamera(0) read failed (status=False).
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\yangj\anaconda3\envs\lerobot\Lib\threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "C:\Users\yangj\anaconda3\envs\lerobot\Lib\threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 469, in _read_loop
+    raise RuntimeError(f"{self} exceeded maximum consecutive read failures.") from e
+RuntimeError: OpenCVCamera(0) exceeded maximum consecutive read failures.
+✓ 机械臂已断开
+Traceback (most recent call last):
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\examples\tutorial\vqbet\vqbet_using_example_so101.py", line 212, in <module>
+    main()
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\examples\tutorial\vqbet\vqbet_using_example_so101.py", line 127, in main
+    obs = robot.get_observation()
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\utils\decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\robots\so_follower\so_follower.py", line 194, in get_observation
+    obs_dict[cam_key] = cam.read_latest()
+                        ^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\utils\decorators.py", line 29, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot\src\lerobot\cameras\opencv\camera_opencv.py", line 559, in read_latest
+    raise RuntimeError(f"{self} read thread is not running.")
+RuntimeError: OpenCVCamera(0) read thread is not running.
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> C:\Users\yangj\anaconda3\envs\lerobot\python.exe examples\tutorial\vqbet\vqbet_using_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: outputs/robot_learning_tutorial/vqbet_so101
+number of parameters: 26.00M
+Loading weights from local directory
+✓ VQ-VAE 已完成训练（动作离散化就绪）
+加载数据集元数据: WT/test
+加载预/后处理器: outputs/robot_learning_tutorial/vqbet_so101
+
+数据集 action 统计:
+  shoulder_pan.pos: mean=7.9651, std=12.0235, range=[-18.3297, 37.8462]
+  shoulder_lift.pos: mean=47.7416, std=50.8927, range=[-4.9231, 136.9670]
+  elbow_flex.pos: mean=-37.0514, std=36.2865, range=[-124.7033, 1.9780]
+  wrist_flex.pos: mean=54.9820, std=16.3344, range=[23.1648, 80.3956]
+  wrist_roll.pos: mean=7.0690, std=10.7787, range=[-27.6484, 35.5604]
+  gripper.pos: mean=8.7239, std=8.7286, range=[0.2477, 27.3328]
+
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+✓ 机械臂已连接
+
+开始推理: 1 个 episode, 每个 episode 最多 800 步
+按 Ctrl+C 可随时停止
+
+--- Episode 1/1 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-1.4066, 77.1429]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0667, 0.1490]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-0.9911, 0.9772]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0667, 0.1490]
+  [Step 0] 模型原始输出 (归一化): [[-0.34100741147994995, -0.8657729029655457, 0.6767730116844177, 0.7350577116012573, 0.08833107352256775, 0.6887924671173096]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[0.1800556182861328, 4.599671840667725, -18.495384216308594, 72.8141860961914, 6.747697830200195, 23.11824607849121]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: 0.1801
+    shoulder_lift.pos: 4.5997
+    elbow_flex.pos: -18.4954
+    wrist_flex.pos: 72.8142
+    wrist_roll.pos: 6.7477
+    gripper.pos: 23.1182
+
+  [Step 1] 模型原始输出 (归一化): [[-0.358309805393219, -0.8680686950683594, 0.6575119495391846, 0.7378129959106445, 0.06711369752883911, 0.6918841600418091]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[-0.30593299865722656, 4.43679666519165, -19.71540069580078, 72.89302825927734, 6.077131271362305, 23.16011619567871]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: -0.3059
+    shoulder_lift.pos: 4.4368
+    elbow_flex.pos: -19.7154
+    wrist_flex.pos: 72.8930
+    wrist_roll.pos: 6.0771
+    gripper.pos: 23.1601
+
+  [Step 2] 模型原始输出 (归一化): [[-0.3617790639400482, -0.8400658369064331, 0.6388788223266602, 0.7234570980072021, 0.07676666975021362, 0.7041918039321899]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[-0.4033775329589844, 6.423460483551025, -20.89563751220703, 72.48222351074219, 6.382211685180664, 23.326791763305664]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: -0.4034
+    shoulder_lift.pos: 6.4235
+    elbow_flex.pos: -20.8956
+    wrist_flex.pos: 72.4822
+    wrist_roll.pos: 6.3822
+    gripper.pos: 23.3268
+
+  Step: 800/800
+  Episode 1 完成！
+✓ 机械臂已断开
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> C:\Users\yangj\anaconda3\envs\lerobot\python.exe examples\tutorial\vqbet\vqbet_using_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: outputs/robot_learning_tutorial/vqbet_so101
+number of parameters: 26.00M
+Loading weights from local directory
+✓ VQ-VAE 已完成训练（动作离散化就绪）
+加载数据集元数据: WT/test
+加载预/后处理器: outputs/robot_learning_tutorial/vqbet_so101
+
+数据集 action 统计:
+  shoulder_pan.pos: mean=7.9651, std=12.0235, range=[-18.3297, 37.8462]
+  shoulder_lift.pos: mean=47.7416, std=50.8927, range=[-4.9231, 136.9670]
+  elbow_flex.pos: mean=-37.0514, std=36.2865, range=[-124.7033, 1.9780]
+  wrist_flex.pos: mean=54.9820, std=16.3344, range=[23.1648, 80.3956]
+  wrist_roll.pos: mean=7.0690, std=10.7787, range=[-27.6484, 35.5604]
+  gripper.pos: mean=8.7239, std=8.7286, range=[0.2477, 27.3328]
+
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+✓ 机械臂已连接
+
+开始推理: 3 个 episode, 每个 episode 最多 800 步
+按 Ctrl+C 可随时停止
+
+--- Episode 1/3 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-3.6923, 69.1429]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9216]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-1.0000, 0.9743]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9216]
+  [Step 0] 模型原始输出 (归一化): [[-0.4636624753475189, -0.9971882700920105, 0.9535102248191833, 0.6223621964454651, -0.022984616458415985, -0.5524608492851257]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[-3.2650699615478516, -4.723598957061768, -0.9666671752929688, 69.58935546875, 3.2296295166015625, 6.308540344238281]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: -3.2651
+    shoulder_lift.pos: -4.7236
+    elbow_flex.pos: -0.9667
+    wrist_flex.pos: 69.5894
+    wrist_roll.pos: 3.2296
+    gripper.pos: 6.3085
+
+  [Step 1] 模型原始输出 (归一化): [[-0.4728388488292694, -0.9943453073501587, 0.9588370323181152, 0.6180979609489441, -0.015787355601787567, -0.5579087138175964]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[-3.5228147506713867, -4.521904468536377, -0.6292724609375, 69.46733856201172, 3.457094192504883, 6.234762668609619]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: -3.5228
+    shoulder_lift.pos: -4.5219
+    elbow_flex.pos: -0.6293
+    wrist_flex.pos: 69.4673
+    wrist_roll.pos: 3.4571
+    gripper.pos: 6.2348
+
+  [Step 2] 模型原始输出 (归一化): [[-0.47119900584220886, -0.9905954599380493, 0.9577176570892334, 0.6165376901626587, -0.01825932413339615, -0.5477880239486694]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[-3.476755142211914, -4.255871772766113, -0.7001724243164062, 69.42268371582031, 3.378969192504883, 6.371822357177734]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: -3.4768
+    shoulder_lift.pos: -4.2559
+    elbow_flex.pos: -0.7002
+    wrist_flex.pos: 69.4227
+    wrist_roll.pos: 3.3790
+    gripper.pos: 6.3718
+
+  Step: 800/800
+  Episode 1 完成！
+--- Episode 2/3 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-3.6923, 69.1429]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9176]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-1.0165, 0.9729]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9176]
+  [Step 0] 模型原始输出 (归一化): [[-0.46122291684150696, -0.9984580278396606, 0.9525652527809143, 0.6190349459648132, -0.0067219361662864685, -0.5494930744171143]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[-3.1965456008911133, -4.813681602478027, -1.0265350341796875, 69.49414825439453, 3.743602752685547, 6.348731517791748]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: -3.1965
+    shoulder_lift.pos: -4.8137
+    elbow_flex.pos: -1.0265
+    wrist_flex.pos: 69.4941
+    wrist_roll.pos: 3.7436
+    gripper.pos: 6.3487
+
+  [Step 1] 模型原始输出 (归一化): [[-0.4701557457447052, -0.9951515793800354, 0.9580181837081909, 0.6156737804412842, 0.00011831521987915039, -0.5549827814102173]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[-3.447450637817383, -4.579105854034424, -0.6811370849609375, 69.39796447753906, 3.9597816467285156, 6.274386882781982]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: -3.4475
+    shoulder_lift.pos: -4.5791
+    elbow_flex.pos: -0.6811
+    wrist_flex.pos: 69.3980
+    wrist_roll.pos: 3.9598
+    gripper.pos: 6.2744
+
+  [Step 2] 模型原始输出 (归一化): [[-0.4682828187942505, -0.9918668270111084, 0.9570829272270203, 0.6145451068878174, -0.0029856935143470764, -0.544580340385437]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[-3.3948450088500977, -4.346068859100342, -0.7403717041015625, 69.36566925048828, 3.861682891845703, 6.415262222290039]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: -3.3948
+    shoulder_lift.pos: -4.3461
+    elbow_flex.pos: -0.7404
+    wrist_flex.pos: 69.3657
+    wrist_roll.pos: 3.8617
+    gripper.pos: 6.4153
+
+  Step: 800/800
+  Episode 2 完成！
+--- Episode 3/3 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-3.1648, 69.3187]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9098]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-1.0190, 0.9729]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9098]
+  [Step 0] 模型原始输出 (归一化): [[-0.4459984600543976, -0.9990283846855164, 0.9530714154243469, 0.6231713891029358, 7.299333810806274e-05, -0.5454493761062622]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[-2.768922805786133, -4.8541460037231445, -0.9944686889648438, 69.61251068115234, 3.9583511352539062, 6.403493404388428]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: -2.7689
+    shoulder_lift.pos: -4.8541
+    elbow_flex.pos: -0.9945
+    wrist_flex.pos: 69.6125
+    wrist_roll.pos: 3.9584
+    gripper.pos: 6.4035
+
+  [Step 1] 模型原始输出 (归一化): [[-0.4549872875213623, -0.9955946207046509, 0.9585267901420593, 0.6196766495704651, 0.007055066525936127, -0.5500571727752686]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[-3.0214014053344727, -4.610537052154541, -0.6489181518554688, 69.51250457763672, 4.17901611328125, 6.341092109680176]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: -3.0214
+    shoulder_lift.pos: -4.6105
+    elbow_flex.pos: -0.6489
+    wrist_flex.pos: 69.5125
+    wrist_roll.pos: 4.1790
+    gripper.pos: 6.3411
+
+  [Step 2] 模型原始输出 (归一化): [[-0.45315152406692505, -0.9926949739456177, 0.9576011896133423, 0.6187500357627869, 0.00496818870306015, -0.5395963191986084]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[-2.9698381423950195, -4.404821395874023, -0.707550048828125, 69.48599243164062, 4.113061904907227, 6.482758522033691]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: -2.9698
+    shoulder_lift.pos: -4.4048
+    elbow_flex.pos: -0.7076
+    wrist_flex.pos: 69.4860
+    wrist_roll.pos: 4.1131
+    gripper.pos: 6.4828
+
+  Step: 800/800
+  Episode 3 完成！
+✓ 机械臂已断开
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> C:\Users\yangj\anaconda3\envs\lerobot\python.exe examples\tutorial\vqbet\vqbet_using_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: outputs/robot_learning_tutorial/vqbet_so101
+number of parameters: 26.00M
+Loading weights from local directory
+✓ VQ-VAE 已完成训练（动作离散化就绪）
+加载数据集元数据: WT/test
+加载预/后处理器: outputs/robot_learning_tutorial/vqbet_so101
+
+数据集 action 统计:
+  shoulder_pan.pos: mean=7.9651, std=12.0235, range=[-18.3297, 37.8462]
+  shoulder_lift.pos: mean=47.7416, std=50.8927, range=[-4.9231, 136.9670]
+  elbow_flex.pos: mean=-37.0514, std=36.2865, range=[-124.7033, 1.9780]
+  wrist_flex.pos: mean=54.9820, std=16.3344, range=[23.1648, 80.3956]
+  wrist_roll.pos: mean=7.0690, std=10.7787, range=[-27.6484, 35.5604]
+  gripper.pos: mean=8.7239, std=8.7286, range=[0.2477, 27.3328]
+
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+✓ 机械臂已连接
+
+开始推理: 1 个 episode, 每个 episode 最多 800 步
+按 Ctrl+C 可随时停止
+
+--- Episode 1/1 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-3.1648, 69.3187]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9059]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-1.0038, 0.9729]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9059]
+  [Step 0] 模型原始输出 (归一化): [[-0.448641300201416, -0.9980759620666504, 0.9530636668205261, 0.6267068386077881, 9.550899267196655e-05, -0.5472372770309448]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[-2.843155860900879, -4.786576271057129, -0.9949569702148438, 69.71368408203125, 3.9590625762939453, 6.3792805671691895]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: -2.8432
+    shoulder_lift.pos: -4.7866
+    elbow_flex.pos: -0.9950
+    wrist_flex.pos: 69.7137
+    wrist_roll.pos: 3.9591
+    gripper.pos: 6.3793
+
+  [Step 1] 模型原始输出 (归一化): [[-0.4576079249382019, -0.9950543642044067, 0.9585725665092468, 0.6232316493988037, 0.00706607848405838, -0.5517681241035461]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[-3.0950088500976562, -4.572208881378174, -0.6460189819335938, 69.6142349243164, 4.179365158081055, 6.3179216384887695]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: -3.0950
+    shoulder_lift.pos: -4.5722
+    elbow_flex.pos: -0.6460
+    wrist_flex.pos: 69.6142
+    wrist_roll.pos: 4.1794
+    gripper.pos: 6.3179
+
+  [Step 2] 模型原始输出 (归一化): [[-0.4559592306613922, -0.9920231103897095, 0.9575986862182617, 0.6223300695419312, 0.005127355456352234, -0.5412845611572266]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[-3.0487003326416016, -4.357156276702881, -0.7077102661132812, 69.58843994140625, 4.118091583251953, 6.459895610809326]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: -3.0487
+    shoulder_lift.pos: -4.3572
+    elbow_flex.pos: -0.7077
+    wrist_flex.pos: 69.5884
+    wrist_roll.pos: 4.1181
+    gripper.pos: 6.4599
+
+  Step: 800/800
+  Episode 1 完成！
+✓ 机械臂已断开
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> C:\Users\yangj\anaconda3\envs\lerobot\python.exe examples\tutorial\vqbet\vqbet_using_example_so101.py
+使用 CUDA 设备: NVIDIA GeForce RTX 5060 Ti
+加载模型: outputs/robot_learning_tutorial/vqbet_so101
+number of parameters: 26.00M
+Loading weights from local directory
+✓ VQ-VAE 已完成训练（动作离散化就绪）
+加载数据集元数据: WT/test
+加载预/后处理器: outputs/robot_learning_tutorial/vqbet_so101
+
+数据集 action 统计:
+  shoulder_pan.pos: mean=7.9651, std=12.0235, range=[-18.3297, 37.8462]
+  shoulder_lift.pos: mean=47.7416, std=50.8927, range=[-4.9231, 136.9670]
+  elbow_flex.pos: mean=-37.0514, std=36.2865, range=[-124.7033, 1.9780]
+  wrist_flex.pos: mean=54.9820, std=16.3344, range=[23.1648, 80.3956]
+  wrist_roll.pos: mean=7.0690, std=10.7787, range=[-27.6484, 35.5604]
+  gripper.pos: mean=8.7239, std=8.7286, range=[0.2477, 27.3328]
+
+连接 SO-101 从臂: port=COM9, id=my_awesome_follower_arm
+✓ 机械臂已连接
+
+开始推理: 1 个 episode, 每个 episode 最多 800 步
+按 Ctrl+C 可随时停止
+
+--- Episode 1/1 ---
+  [Step 0] 原始观测 keys: ['shoulder_pan.pos', 'shoulder_lift.pos', 'elbow_flex.pos', 'wrist_flex.pos', 'wrist_roll.pos', 'gripper.pos', 'side', 'front']
+  [Step 0] 构建的观测帧 keys: ['observation.state', 'observation.images.side', 'observation.images.front', 'task', 'robot_type']
+    observation.state: shape=torch.Size([1, 6]), range=[-3.2527, 69.3187]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9333]
+    task:
+    robot_type:
+  [Step 0] 预处理后 keys: ['action', 'next.reward', 'next.done', 'next.truncated', 'info', 'task', 'observation.state', 'observation.images.side', 'observation.images.front']
+    action: None
+    next.reward: 0.0
+    next.done: False
+    next.truncated: False
+    info: {}
+    task: ['']
+    observation.state: shape=torch.Size([1, 6]), range=[-1.0025, 0.9729]
+    observation.images.side: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 1.0000]
+    observation.images.front: shape=torch.Size([1, 3, 480, 640]), range=[0.0000, 0.9333]
+  [Step 0] 模型原始输出 (归一化): [[-0.45133185386657715, -0.9978083372116089, 0.9527639150619507, 0.6270465850830078, -0.0006691962480545044, -0.5480284690856934]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=4, maxlen=5
+  [Step 0] 反归一化后 (tensor): [[-2.9187278747558594, -4.767589569091797, -1.013946533203125, 69.72340393066406, 3.934896469116211, 6.368566036224365]]
+  [Step 0] 发送给机械臂:
+    shoulder_pan.pos: -2.9187
+    shoulder_lift.pos: -4.7676
+    elbow_flex.pos: -1.0139
+    wrist_flex.pos: 69.7234
+    wrist_roll.pos: 3.9349
+    gripper.pos: 6.3686
+
+  [Step 1] 模型原始输出 (归一化): [[-0.4603395462036133, -0.9948923587799072, 0.9583014249801636, 0.6238109469413757, 0.006150834262371063, -0.5524382591247559]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=3, maxlen=5
+  [Step 1] 反归一化后 (tensor): [[-3.1717348098754883, -4.560715198516846, -0.6631927490234375, 69.63081359863281, 4.15043830871582, 6.308846473693848]]
+  [Step 1] 发送给机械臂:
+    shoulder_pan.pos: -3.1717
+    shoulder_lift.pos: -4.5607
+    elbow_flex.pos: -0.6632
+    wrist_flex.pos: 69.6308
+    wrist_roll.pos: 4.1504
+    gripper.pos: 6.3088
+
+  [Step 2] 模型原始输出 (归一化): [[-0.45869410037994385, -0.9917048215866089, 0.9573022723197937, 0.6228596568107605, 0.004178375005722046, -0.5421515107154846]]
+    队列 observation.images: len=5, maxlen=5
+    队列 observation.state: len=5, maxlen=5
+    队列 action: len=2, maxlen=5
+  [Step 2] 反归一化后 (tensor): [[-3.1255178451538086, -4.334575176239014, -0.7264785766601562, 69.60359191894531, 4.088100433349609, 6.448154926300049]]
+  [Step 2] 发送给机械臂:
+    shoulder_pan.pos: -3.1255
+    shoulder_lift.pos: -4.3346
+    elbow_flex.pos: -0.7265
+    wrist_flex.pos: 69.6036
+    wrist_roll.pos: 4.0881
+    gripper.pos: 6.4482
+
+  Step: 800/800
+  Episode 1 完成！
+✓ 机械臂已断开
+(lerobot) PS C:\Users\yangj\Desktop\YANG Jingyuan\其他\lerobot> 

@@ -1,0 +1,37 @@
+teleop:
+  type: so101_leader
+  port: COM8
+  id: my_awesome_leader_arm
+
+robot:
+  type: so101_follower
+  port: COM9
+  id: my_awesome_follower_arm
+  disable_torque_on_disconnect: true
+  cameras:
+    side:
+      type: opencv
+      index_or_path: 2
+      width: 640
+      height: 480
+      fps: 30
+      fourcc: MJPG
+    front:
+      type: opencv
+      index_or_path: 0
+      width: 640
+      height: 480
+      fps: 30
+      fourcc: MJPG
+
+dataset:
+  root: C:/Users/yangj/Desktop/BaiduNetdiskDownload/lerobot
+  repo_id: WT/test
+  num_episodes: 50
+  single_task: "Grab the red cube"
+  push_to_hub: false
+  episode_time_s: 60
+  reset_time_s: 20
+
+display_data: false
+#resume: true

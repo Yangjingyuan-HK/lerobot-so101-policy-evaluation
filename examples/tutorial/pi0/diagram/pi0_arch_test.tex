@@ -1,0 +1,201 @@
+﻿% ============================================================
+%  PI0 (pi_0) Vision-Language-Action Flow Model
+%  Architecture diagram  (PlotNeuralNet / raw-TikZ hybrid)
+%  Compile with:  xelatex pi0_arch.tex
+% ============================================================
+\documentclass[border=12pt,tikz]{standalone}
+\usepackage{fontspec}\setmainfont{SimSun}\setsansfont{SimHei}        % 中文支持 (xelatex)
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usetikzlibrary{positioning,arrows.meta,calc,fit,shapes.geometric,backgrounds,decorations.pathreplacing,shapes.misc}
+
+% ---------- 颜色定义 (颜色编码) ----------
+\definecolor{inputgray}{HTML}{9E9E9E}     % 输入层: 灰色
+\definecolor{siglipblue}{HTML}{1565C0}    % SigLIP 视觉: 深蓝
+\definecolor{sigliplight}{HTML}{BBDEFB}   % SigLIP 视觉: 浅蓝填充
+\definecolor{projblue}{HTML}{64B5F6}      % 多模态投影: 蓝
+\definecolor{langgreen}{HTML}{2E7D32}     % 语言: 深绿
+\definecolor{langlight}{HTML}{C8E6C9}     % 语言: 浅绿填充
+\definecolor{vlmpurple}{HTML}{6A1B9A}     % VLM 主干: 紫
+\definecolor{vlmlight}{HTML}{E1BEE7}      % VLM 浅紫填充
+\definecolor{expertorange}{HTML}{E65100}  % Action Expert: 橙
+\definecolor{expertlight}{HTML}{FFE0B2}   % Expert 浅橙填充
+\definecolor{expertred}{HTML}{C62828}     % Expert 红
+\definecolor{jointmagenta}{HTML}{AD1457}  % 联合注意力: 紫红
+\definecolor{jointlight}{HTML}{F8BBD0}    % 联合注意力浅填充
+\definecolor{flowgreen}{HTML}{00695C}     % Flow Matching: 青绿
+\definecolor{flowlight}{HTML}{B2DFDB}     % Flow 浅填充
+\definecolor{prefixpurple}{HTML}{4527A0}  % Prefix 拼接
+\definecolor{prefixlight}{HTML}{D1C4E9}
+\definecolor{suffixamber}{HTML}{F57F17}   % Suffix 拼接
+\definecolor{suffixlight}{HTML}{FFF9C4}
+\definecolor{outputteal}{HTML}{00838F}    % 输出头
+\definecolor{outputlight}{HTML}{B2EBF2}
+
+% ---------- 通用节点样式 ----------
+\tikzset{
+  blk/.style={draw, rounded corners=2pt, align=center, font=\footnotesize,
+              inner sep=3pt, line width=0.6pt},
+  input/.style={blk, fill=inputgray!35, draw=inputgray!90, text=black},
+  vis/.style={blk, fill=sigliplight, draw=siglipblue, text=siglipblue!40!black},
+  visd/.style={blk, fill=siglipblue!20, draw=siglipblue, text=siglipblue!40!black},
+  lang/.style={blk, fill=langlight, draw=langgreen, text=langgreen!40!black},
+  vlm/.style={blk, fill=vlmlight, draw=vlmpurple, text=vlmpurple!35!black},
+  exp/.style={blk, fill=expertlight, draw=expertorange, text=expertorange!40!black},
+  expr/.style={blk, fill=expertred!15, draw=expertred, text=expertred!40!black},
+  joint/.style={blk, fill=jointlight, draw=jointmagenta, text=jointmagenta!35!black, line width=1pt},
+  flow/.style={blk, fill=flowlight, draw=flowgreen, text=flowgreen!40!black},
+  pfx/.style={blk, fill=prefixlight, draw=prefixpurple, text=prefixpurple!35!black, line width=0.8pt},
+  sfx/.style={blk, fill=suffixlight, draw=suffixamber, text=suffixamber!40!black, line width=0.8pt},
+  out/.style={blk, fill=outputlight, draw=outputteal, text=outputteal!40!black, line width=0.8pt},
+  ttl/.style={font=\bfseries\small, align=center},
+  grpbox/.style={draw, dashed, rounded corners=6pt, inner sep=6pt, line width=1pt},
+  arr/.style={-{Stealth[length=2.4mm,width=2mm]}, line width=0.55pt},
+  arrt/.style={arr, line width=0.9pt, draw=jointmagenta},
+  arrf/.style={arr, line width=0.7pt, draw=flowgreen},
+  resarr/.style={-{Stealth[length=2mm,width=1.6mm]}, line width=0.5pt, dashed, draw=gray!70},
+  biarr/.style={<{Stealth[length=2mm]},>{Stealth[length=2mm]}, line width=1.6pt, draw=jointmagenta},
+}
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+
+\node[blk, text width=15.5, minimum height=1.1, fill=black!5, draw=black!30] (title) at (8.5,34.2) {{\bfseries\large PI0 ($\pi_0$): Vision-Language-Action Flow Model}\\[1pt]{\footnotesize Physical Intelligence, arXiv:2410.24164 \quad|\quad LeRobot \texttt{pi0\_base} \quad|\quad SO-101 (7-DoF action)}};
+\node[ttl, text width=2] (lab_in) at (-1.2,32.3) {{\bfseries 输入层\\\scriptsize Inputs}};
+\node[input, text width=2.5, minimum height=1.0] (in_img) at (1.2,32.3) {{\bfseries Image}\\[B,1,3,224,224]\\{\scriptsize SO-101 单相机}}};
+\node[input, text width=2.5, minimum height=1.0] (in_lang) at (4.5,32.3) {{\bfseries Language}\\[B,48] tok\\{\scriptsize PaliGemma tok}}};
+\node[input, text width=2.5, minimum height=1.0] (in_state) at (7.8,32.3) {{\bfseries State $q_t$}\\[B,7]$\to$[B,32]\\{\scriptsize 6关节+夹爪}}};
+\node[input, text width=3.0, minimum height=1.0] (in_noise) at (11.1,32.3) {{\bfseries Noisy Action $A_t^\tau$}\\[B,50,32]\\{\scriptsize 训练:加噪 / 推理:纯噪声}}};
+\node[vis, text width=2.9, minimum height=1.15] (v_patch) at (1.2,30.3) {{PatchEmbed\\Conv2d 3$\to$1152, k=14, s=14\\$\to$ 16$\times$16=256 patches}};
+\node[vis, text width=2.9, minimum height=0.7] (v_posemb) at (1.2,28.7) {{$+$ Learnable Abs PosEmb\\(256 位置)}};
+\node[visd, text width=2.9, minimum height=1.5] (v_siglip) at (1.2,26.7) {{\bfseries SigLIP-So400m Encoder $\times$27}\\{\scriptsize hidden=1152, patch=14}\\{\scriptsize 256 token (无 CLS)}}};
+\node[vis, text width=2.9, minimum height=1.1] (v_proj) at (1.2,24.7) {{multi\_modal\_projector\\MLP 1152$\to$4304$\to$2048\\{\scriptsize gelu\_fast}}};
+\node[vis, text width=2.9, minimum height=0.7] (v_out) at (1.2,23.2) {{视觉 token\\256$\times$2048}};
+\node[lang, text width=2.9, minimum height=1.0] (l_tok) at (4.5,30.3) {{PaliGemma Tokenizer\\max\_length=48, 末尾补 \textbackslash n}};
+\node[lang, text width=2.9, minimum height=0.8] (l_emb) at (4.5,28.7) {{embed\_tokens\\vocab=257152}};
+\node[lang, text width=2.9, minimum height=0.7] (l_out) at (4.5,27.2) {{语言 token\\48$\times$2048}};
+\node[exp, text width=2.5, minimum height=0.7] (s_pad) at (7.8,30.3) {{zero-pad 7$\to$32}};
+\node[exp, text width=2.5, minimum height=0.8] (s_proj) at (7.8,29.0) {{state\_proj\\Linear(32$\to$1024)}};
+\node[exp, text width=2.5, minimum height=0.7] (s_out) at (7.8,27.6) {{state token\\1$\times$1024}};
+\node[expr, text width=2.6, minimum height=1.05] (a_inproj) at (10.0,30.3) {{action\_in\_proj\\Linear(32$\to$1024)\\$\to$ 50$\times$1024}};
+\node[expr, text width=2.7, minimum height=1.05] (a_time) at (12.7,30.3) {{Timestep $t$\\sinusoidal\_pos\_emb\\dim=1024}\\{\scriptsize $\to$ 50$\times$1024}};
+\node[expr, text width=4.6, minimum height=0.7] (a_concat) at (11.35,28.6) {{concat[action\_emb $\|$ time\_emb]\\50$\times$2048}};
+\node[expr, text width=4.6, minimum height=0.7] (a_mlp_in) at (11.35,27.3) {{action\_time\_mlp\_in\\Linear(2048$\to$1024)$+$SiLU}};
+\node[expr, text width=4.6, minimum height=0.7] (a_mlp_out) at (11.35,26.0) {{action\_time\_mlp\_out\\Linear(1024$\to$1024) $\to$ 50$\times$1024}};
+\node[expr, text width=4.6, minimum height=0.6] (a_out) at (11.35,24.6) {{action token\\50$\times$1024}};
+\draw[arr] (in_img) -- (v_patch);
+\draw[arr] (v_patch) -- (v_posemb);
+\draw[arr] (v_posemb) -- (v_siglip);
+\draw[arr] (v_siglip) -- (v_proj);
+\draw[arr] (v_proj) -- (v_out);
+\draw[arr] (in_lang) -- (l_tok);
+\draw[arr] (l_tok) -- (l_emb);
+\draw[arr] (l_emb) -- (l_out);
+\draw[arr] (in_state) -- (s_pad);
+\draw[arr] (s_pad) -- (s_proj);
+\draw[arr] (s_proj) -- (s_out);
+\draw[arr] (in_noise) -- (a_inproj);
+\draw[arr] (a_inproj) -- (a_concat);
+\draw[arr] (a_time) -- (a_concat);
+\draw[arr] (a_concat) -- (a_mlp_in);
+\draw[arr] (a_mlp_in) -- (a_mlp_out);
+\draw[arr] (a_mlp_out) -- (a_out);
+\node[pfx, text width=5.2, minimum height=1.15] (prefix) at (2.85,22.2) {{\bfseries Prefix 拼接}\\concat[视觉 256 $|$ 语言 48] = 304$\times$2048\\{\scriptsize att\_mask=0, 全双向}}};
+\node[sfx, text width=5.2, minimum height=1.15] (suffix) at (9.7,22.2) {{\bfseries Suffix 拼接}\\concat[state 1 $|$ action 50] = 51$\times$1024\\{\scriptsize att\_mask=1/2, 可见 prefix}}};
+\draw[arr] (v_out) -- (prefix);
+\draw[arr] (l_out) -- (prefix);
+\draw[arr] (s_out) -- (suffix);
+\draw[arr] (a_out) -- (suffix);
+\node[ttl, text width=12] (tf_ttl) at (6.25,20.6) {{\bfseries\color{jointmagenta} Paired-Layer Joint Transformer $\times$ 18 (核心创新)}};
+\node[vlm, text width=4.6, minimum height=0.85] (vlmhdr) at (2.85,19.7) {{\bfseries\color{vlmpurple} VLM 流 (Gemma-2B)}\\{\scriptsize hidden=2048, MLP=16384, GQA 8/1, head\_dim=256}}};
+\node[vlm, text width=4.6, minimum height=0.5] (v_ln1) at (2.85,18.5) {{Input RMSNorm}};
+\node[vlm, text width=4.6, minimum height=0.65] (v_qkv) at (2.85,17.6) {{Q/K/V proj (GQA 8头Q,1头KV)\\head\_dim=256}};
+\node[vlm, text width=4.6, minimum height=0.7] (v_attn) at (2.85,16.4) {{\bfseries Joint Attention}\\{\scriptsize (见中间汇合)}}};
+\node[vlm, text width=4.6, minimum height=0.55] (v_oproj) at (2.85,15.3) {{o\_proj $+$ 残差 (gate=None)}};
+\node[vlm, text width=4.6, minimum height=0.5] (v_ln2) at (2.85,14.4) {{Post-Attn RMSNorm}};
+\node[vlm, text width=4.6, minimum height=0.7] (v_mlp) at (2.85,13.3) {{MLP: gate\_up $\to$ GeLU $\to$ down\\dim=16384}};
+\node[vlm, text width=4.6, minimum height=0.5] (v_res2) at (2.85,12.3) {{残差 $+$ (下一层)}};
+\node[exp, text width=4.6, minimum height=0.85] (exhdr) at (9.7,19.7) {{\bfseries\color{expertorange} Action Expert 流 (Gemma-300M)}\\{\scriptsize hidden=1024, MLP=4096, GQA 8/1, 从零初始化}}};
+\node[exp, text width=4.6, minimum height=0.5] (e_ln1) at (9.7,18.5) {{Input RMSNorm}};
+\node[exp, text width=4.6, minimum height=0.65] (e_qkv) at (9.7,17.6) {{Q/K/V proj (GQA 8头Q,1头KV)\\head\_dim=256}};
+\node[exp, text width=4.6, minimum height=0.7] (e_attn) at (9.7,16.4) {{\bfseries Joint Attention}\\{\scriptsize (见中间汇合)}}};
+\node[exp, text width=4.6, minimum height=0.55] (e_oproj) at (9.7,15.3) {{o\_proj $+$ 残差 (gate=None)}};
+\node[exp, text width=4.6, minimum height=0.5] (e_ln2) at (9.7,14.4) {{Post-Attn RMSNorm}};
+\node[exp, text width=4.6, minimum height=0.7] (e_mlp) at (9.7,13.3) {{MLP: gate\_up $\to$ GeLU $\to$ down\\dim=4096}};
+\node[exp, text width=4.6, minimum height=0.5] (e_res2) at (9.7,12.3) {{残差 $+$ (下一层)}};
+\node[joint, text width=3.7, minimum height=2.0] (joint) at (6.25,16.4) {{\bfseries $\bigstar$ Joint Attention\\concat Q,K,V (沿序列维)\\shared RoPE $\to$ block-causal mask\\$\text{softmax}(QK^\top/\sqrt{d})V$\\{\scriptsize 单次注意力, 再拆分回两流}}};
+\draw[arr] (vlmhdr) -- (v_ln1);
+\draw[arr] (v_ln1) -- (v_qkv);
+\draw[arr] (v_qkv) -- (v_attn);
+\draw[arr] (v_attn) -- (v_oproj);
+\draw[arr] (v_oproj) -- (v_ln2);
+\draw[arr] (v_ln2) -- (v_mlp);
+\draw[arr] (v_mlp) -- (v_res2);
+\draw[arr] (exhdr) -- (e_ln1);
+\draw[arr] (e_ln1) -- (e_qkv);
+\draw[arr] (e_qkv) -- (e_attn);
+\draw[arr] (e_attn) -- (e_oproj);
+\draw[arr] (e_oproj) -- (e_ln2);
+\draw[arr] (e_ln2) -- (e_mlp);
+\draw[arr] (e_mlp) -- (e_res2);
+\draw[biarr] (v_qkv.east) -- node[above,font=\scriptsize,fill=white,inner sep=1pt]{Q,K,V} (joint.west);
+\draw[biarr] (e_qkv.west) -- node[above,font=\scriptsize,fill=white,inner sep=1pt]{Q,K,V} (joint.east);
+\draw[arrt] (joint.south west) -- (v_oproj.north) node[above,font=\tiny,sloped] {{\scriptsize 拆分}};
+\draw[arrt] (joint.south east) -- (e_oproj.north) node[above,font=\tiny,sloped] {{\scriptsize 拆分}};
+\draw[resarr] ($(vlmhdr.south west)+(-0.15,0)$) -- ($(v_oproj.north west)+(-0.15,0.1)$) node[midway,left,font=\tiny,gray]{res};
+\draw[resarr] ($(v_ln2.south west)+(-0.15,0)$) -- ($(v_res2.north west)+(-0.15,0.1)$) node[midway,left,font=\tiny,gray]{res};
+\draw[resarr] ($(exhdr.south east)+(0.15,0)$) -- ($(e_oproj.north east)+(0.15,0.1)$) node[midway,right,font=\tiny,gray]{res};
+\draw[resarr] ($(e_ln2.south east)+(0.15,0)$) -- ($(e_res2.north east)+(0.15,0.1)$) node[midway,right,font=\tiny,gray]{res};
+\node[grpbox, draw=jointmagenta!70, fit=(tf_ttl)(vlmhdr)(v_ln1)(v_qkv)(v_attn)(v_oproj)(v_ln2)(v_mlp)(v_res2)(exhdr)(e_ln1)(e_qkv)(e_attn)(e_oproj)(e_ln2)(e_mlp)(e_res2)(joint), label={[font=\scriptsize,gray]below right:\textit{$\times$ 18 层 (仅展开 1 对示意)}}] (tfbox) {};
+\draw[arrt] (prefix) -- (vlmhdr) node[right,font=\tiny,sloped] {{\scriptsize 304$\times$2048}};
+\draw[arrt] (suffix) -- (exhdr) node[left,font=\tiny,sloped] {{\scriptsize 51$\times$1024}};
+\node[out, text width=6.5, minimum height=0.6] (fnorm) at (6.25,8.6) {{Final RMSNorm (两流各自)}};
+\node[out, text width=6.5, minimum height=0.6] (actsel) at (6.25,7.5) {{取后 50 个 action token (suffix 输出)}};
+\node[out, text width=6.5, minimum height=0.75] (outproj) at (6.25,6.3) {{\bfseries action\_out\_proj}\\Linear(1024$\to$32)}};
+\node[out, text width=6.5, minimum height=0.7, fill=outputteal!20, line width=1pt] (vt) at (6.25,5.0) {{\bfseries $v_t$}  (速度场预测)\\[B,50,32]}};
+\draw[arrt] (v_res2) -- (fnorm) node[right,font=\tiny,sloped] {{\scriptsize 2048}};
+\draw[arrt] (e_res2) -- (fnorm) node[left,font=\tiny,sloped] {{\scriptsize 1024}};
+\draw[arr] (fnorm) -- (actsel);
+\draw[arr] (actsel) -- (outproj);
+\draw[arr] (outproj) -- (vt);
+\node[ttl, text width=4.2] (fm_ttl) at (18.6,23.0) {{\bfseries\color{flowgreen} Flow Matching 训练}};
+\node[flow, text width=4.2, minimum height=0.7] (fm_eps) at (18.6,21.9) {{$\varepsilon \sim \mathcal{N}(0,\mathbf{I})$\\[B,50,32]}};
+\node[flow, text width=4.2, minimum height=0.7] (fm_target) at (18.6,20.6) {{目标速度场\\$u_t = \varepsilon - A_t$}};
+\node[flow, text width=4.2, minimum height=0.95] (fm_loss) at (18.6,19.2) {{\bfseries loss}\\$\mathrm{MSE}(u_t,\, v_t)$\\{\scriptsize 截取 action\_dim=7}}};
+\node[flow, text width=4.2, minimum height=0.8] (fm_opt) at (18.6,17.8) {{AdamW\\lr=2.5e-5, wd=0.01\\grad\_clip=1.0}};
+\draw[arrf] (vt) -- (fm_loss) node[above,font=\tiny,sloped] {{\scriptsize $v_t$ 预测}};
+\draw[arr] (fm_eps) -- (fm_target);
+\draw[arr] (fm_target) -- (fm_loss);
+\draw[arr] (fm_loss) -- (fm_opt);
+\node[grpbox, draw=flowgreen!70, fit=(fm_ttl)(fm_eps)(fm_target)(fm_loss)(fm_opt)] (fmbox) {};
+\node[ttl, text width=4.2] (inf_ttl) at (18.6,13.2) {{\bfseries\color{flowgreen} 推理: 10 步欧拉积分}};
+\node[flow, text width=4.2, minimum height=0.7] (inf_x0) at (18.6,12.1) {{$x_0 \sim \mathcal{N}(0,\mathbf{I})$\\[B,50,32]}};
+\node[flow, text width=4.2, minimum height=0.95] (inf_loop) at (18.6,10.6) {{\bfseries for step = 0..9}\\$t = 1.0 + \mathrm{step}\cdot dt$\\$dt = -0.1$}};
+\node[flow, text width=4.2, minimum height=0.8] (inf_denoise) at (18.6,9.0) {{$v_t = \mathrm{denoise}(\text{state},$\\$\text{prefix\_cache}, x_t, t)$}};
+\node[flow, text width=4.2, minimum height=0.6] (inf_update) at (18.6,7.6) {{$x_t = x_t + dt\cdot v_t$}};
+\node[flow, text width=4.2, minimum height=0.75, fill=flowgreen!20, line width=1pt] (inf_out) at (18.6,6.3) {{输出截取前 7 维\\$\to$ 动作 chunk (50,7)}};
+\draw[arr] (inf_x0) -- (inf_loop);
+\draw[arr] (inf_loop) -- (inf_denoise);
+\draw[arr] (inf_denoise) -- (inf_update);
+\draw[arrf] (inf_update.east) -- ++(0.9,0) |- (inf_loop.east) node[midway,right,font=\tiny,flowgreen]{循环};
+\draw[arr] (inf_update) -- (inf_out);
+\node[flow, text width=3.0, minimum height=0.8] (inf_cache) at (13.9,13.2) {{Prefix 预计算 1 次\\(use\_cache, KV 缓存)}};
+\draw[arrf] (prefix) -- (inf_cache) node[above,font=\tiny,sloped] {{\scriptsize cache}};
+\draw[arrf] (inf_cache) -- (inf_denoise) node[above,font=\tiny,sloped] {{\scriptsize KV}};
+\draw[arrf] (vt) -- (inf_denoise) node[below,font=\tiny,sloped] {{\scriptsize 模型 $v_t$}};
+\node[grpbox, draw=flowgreen!70, fit=(inf_ttl)(inf_x0)(inf_loop)(inf_denoise)(inf_update)(inf_out)] (infbox) {};
+\node[blk, text width=20, minimum height=0.9, fill=black!4, draw=black!40] (so101) at (8.5,3.3) {{\bfseries SO-101 适配说明}: 原始动作 7 维 (6 关节 $+$ 1 夹爪) $\xrightarrow{\text{zero-pad}}$ 32 维 $\to$ action\_in\_proj 编码 $\to$ chunk\_size=50 时域 $\to$ 输出 $v_t$[B,50,32] $\xrightarrow{\text{截取前 7 维}}$ 最终动作 chunk [B,50,7]}};
+\node[ttl, text width=4] (leg_ttl) at (8.5,1.9) {{\bfseries 图例}};
+\node[input, text width=2.6, minimum height=0.5] (leg_in) at (0.0,1.1) {输入};
+\node[vis, text width=2.6, minimum height=0.5] (leg_vis) at (3.0,1.1) {SigLIP 视觉};
+\node[lang, text width=2.6, minimum height=0.5] (leg_lang) at (6.0,1.1) {语言嵌入};
+\node[vlm, text width=2.6, minimum height=0.5] (leg_vlm) at (9.0,1.1) {VLM 主干};
+\node[exp, text width=2.6, minimum height=0.5] (leg_exp) at (12.0,1.1) {Action Expert};
+\node[joint, text width=2.6, minimum height=0.5] (leg_joint) at (15.0,1.1) {联合注意力};
+\node[flow, text width=2.6, minimum height=0.5] (leg_flow) at (18.0,1.1) {Flow Matching};
+\node[blk, text width=20, minimum height=0.7, fill=white, draw=black!20] (leg_note) at (8.5,0.3) {{\scriptsize $\bigstar$ Joint Attention: VLM 流与 Expert 流逐层配对, 沿序列维拼接 Q/K/V 共享同一注意力计算 (共享 RoPE + block-causal mask), 再拆分回各自 o\_proj。训练走 MSE 损失, 推理走 10 步欧拉积分。}}};
+
+\end{tikzpicture}
+\end{document}
+
