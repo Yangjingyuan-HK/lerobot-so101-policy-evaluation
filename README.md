@@ -6,7 +6,7 @@
   <img alt="LeRobot" src="./media/readme/lerobot-logo-thumbnail.png" width="100%">
 </p>
 
-## 🎯 Project Overview
+## Project Overview
 
 This project evaluates and compares multiple robot learning policies on the **SO-101 robotic arm** platform, built on top of the [LeRobot](https://github.com/huggingface/lerobot) library by Hugging Face.
 
@@ -17,7 +17,7 @@ The goal is to empirically compare policies such as **PI0**, **PI0-Fast**, **VQ-
 - Inference latency and VRAM requirements
 - Robustness to SO-101's specific kinematic configuration
 
-## 🤖 Hardware Setup
+## Hardware Setup
 
 | Component | Specification |
 |---|---|
@@ -27,7 +27,7 @@ The goal is to empirically compare policies such as **PI0**, **PI0-Fast**, **VQ-
 | **OS** | Windows 11 + WSL2 |
 | **Python** | 3.12+ (managed via Anaconda) |
 
-## 🧪 Experiments
+## Experiments
 
 ### Policies Under Evaluation
 
@@ -48,16 +48,7 @@ Each policy is evaluated through a three-stage pipeline:
 2. **Dataset fine-tuning** — Fine-tune on SO-101 teleoperation demonstrations.
 3. **Post-fine-tuning evaluation** — Compare fine-tuned vs. zero-shot performance.
 
-### VRAM Optimization Strategies (for 20 GB GPUs)
-
-For large policies like PI0 / PI0-Fast, the following strategies were applied:
-
-- `dtype=bfloat16` for mixed-precision training
-- `gradient_checkpointing=True` to trade compute for memory
-- `chunk_size=10` for chunked action prediction
-- Batch size = 2 with gradient accumulation when needed
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 lerobot/
@@ -83,7 +74,7 @@ lerobot/
 └── pyproject.toml             # Project metadata and dependencies
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Installation
 
@@ -124,7 +115,7 @@ python examples/tutorial/pi0_fast/pi0_fast_using_example_so101.py
 python examples/tutorial/pi0_fast/pi0_fast_zeroshot_so101.py
 ```
 
-## 📊 Key Findings
+## Key Findings
 
 > Detailed quantitative results will be added as experiments complete.
 
@@ -134,7 +125,7 @@ Expected outcomes (based on LeRobot community reports):
 - **Fine-tuned**: significant improvement, especially for PI0 / PI0-Fast which leverage large pretrained foundations.
 - **PI0-Fast vs. PI0**: PI0-Fast converges ~5× faster while reaching comparable final performance, thanks to FAST tokenization (DCT + BPE) and KV-cache inference.
 
-## 📚 References
+## References
 
 - [LeRobot](https://github.com/huggingface/lerobot) — Hugging Face robotics library (upstream project)
 - [PI0 / PI0-Fast documentation](https://huggingface.co/docs/lerobot/pi0fast)
@@ -142,7 +133,7 @@ Expected outcomes (based on LeRobot community reports):
 - [SO-101 hardware guide](https://huggingface.co/docs/lerobot/so101)
 - [LeRobotDataset format](https://huggingface.co/docs/lerobot/lerobot-dataset-v3)
 
-## 👤 Author
+## Author
 
 **YANG Jingyuan**
 
@@ -150,7 +141,7 @@ Expected outcomes (based on LeRobot community reports):
 - GitHub: [@Yangjingyuan-HK](https://github.com/Yangjingyuan-HK)
 - Email: `25092109d@connect.polyu.hk`
 
-## 📄 License
+## License
 
 Apache License 2.0 — inherited from the upstream [LeRobot](https://github.com/huggingface/lerobot) project. See [LICENSE](./LICENSE) for details.
 
