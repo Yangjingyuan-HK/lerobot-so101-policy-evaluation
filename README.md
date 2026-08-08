@@ -14,7 +14,6 @@ The goal is to empirically compare policies such as **PI0**, **PI0-Fast**, **VQ-
 
 - Zero-shot inference performance (without fine-tuning)
 - Fine-tuning convergence speed and final performance
-- Inference latency and VRAM requirements
 - Robustness to SO-101's specific kinematic configuration
 
 ## Hardware Setup
