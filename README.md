@@ -45,7 +45,6 @@ ACT employs a Conditional Variational Autoencoder (CVAE) with a Transformer back
 
 PI0 is a VLA foundation model built on PaliGemma (~3 B parameters). It adopts **flow matching** for action generation, with a shared transformer that processes visual-language context (prefix stream) and action prediction (suffix stream) through cross-attention, enabling language-conditioned manipulation.
 
-> 📎 [PI0 Architecture (PDF)](./media/so101/PI0/pi0.pdf)
 
 <p align="center">
   <img alt="PI0 Architecture" src="./media/so101/PI0/PI0.png" width="90%">
