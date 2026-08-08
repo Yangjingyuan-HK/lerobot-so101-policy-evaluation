@@ -16,36 +16,60 @@ The goal is to empirically compare policies such as **PI0**, **PI0-Fast**, **VQ-
 - Fine-tuning convergence speed and final performance
 - Robustness to SO-101's specific kinematic configuration
 
-## Hardware Setup
+## Algorithm Research
 
-| Component | Specification |
-|---|---|
-| **Robot arm** | SO-101 (master arm + slave arm, calibrated) |
-| **Compute** | NVIDIA GPU with 20 GB VRAM |
-| **Cameras** | Multiple OpenCV cameras for visual observation |
-| **OS** | Windows 11 + WSL2 |
-| **Python** | 3.12+ (managed via Anaconda) |
+This project investigates four representative imitation learning policies, spanning different architectural paradigms — from CVAE-based action chunking to diffusion-based generation and Vision-Language-Action foundation models.
 
-## Experiments
+| Policy | Paradigm | Key Idea |
+|---|---|---|
+| **ACT** | CVAE + Transformer | Action chunking for temporal consistency |
+| **PI0** | VLA Foundation Model | Flow matching with shared attention |
+| **Diffusion Policy** | Denoising Diffusion | Multi-modal action generation |
+| **VQ-BeT** | Vector Quantization + Transformer | Discrete action tokens via VQ-VAE |
 
-### Policies Under Evaluation
+Each algorithm is evaluated on the **SO-101 robotic arm** through a unified three-stage pipeline: zero-shot inference → dataset fine-tuning → post-fine-tuning evaluation. Below are the architecture analyses for each policy.
 
-| Policy | Category | Parameters | Notes |
-|---|---|---|---|
-| [PI0](./examples/tutorial/pi0/) | VLA | ~3 B | Pretrained foundation model |
-| [PI0-Fast](./examples/tutorial/pi0_fast/) | VLA + FAST tokens | ~2.3 B | 5× faster training via DCT+BPE tokenization |
-| [VQ-BeT](./src/lerobot/policies/vqbet/) | Vector-Quantized Behavior Transformer | — | Discrete action tokens |
-| [ACT](./src/lerobot/policies/act/) | Action Chunking Transformer | — | Chunked action prediction |
-| [Diffusion Policy](./src/lerobot/policies/diffusion/) | Diffusion-based | — | Denoising diffusion for actions |
-| [SmolVLA](./src/lerobot/policies/smolvla/) | VLA | — | Compact VLA model |
+---
 
-### Experiment Workflow
+### ACT — Action Chunking Transformer
 
-Each policy is evaluated through a three-stage pipeline:
+ACT employs a Conditional Variational Autoencoder (CVAE) with a Transformer backbone. Its core innovation is **action chunking** — predicting multi-step action sequences rather than single steps, which improves temporal consistency and mitigates compounding errors in manipulation tasks.
 
-1. **Zero-shot inference** — Run the pretrained policy directly on SO-101 to measure transferability.
-2. **Dataset fine-tuning** — Fine-tune on SO-101 teleoperation demonstrations.
-3. **Post-fine-tuning evaluation** — Compare fine-tuned vs. zero-shot performance.
+<p align="center">
+  <img alt="ACT Architecture" src="./media/so101/ACT/ACT.png" width="90%">
+</p>
+
+---
+
+### PI0 — Vision-Language-Action Model
+
+PI0 is a VLA foundation model built on PaliGemma (~3 B parameters). It adopts **flow matching** for action generation, with a shared transformer that processes visual-language context (prefix stream) and action prediction (suffix stream) through cross-attention, enabling language-conditioned manipulation.
+
+> 📎 [PI0 Architecture (PDF)](./media/so101/PI0/pi0.pdf)
+
+<p align="center">
+  <img alt="PI0 Architecture" src="./media/so101/PI0/PI0.png" width="90%">
+</p>
+
+---
+
+### Diffusion Policy
+
+Diffusion Policy formulates action generation as a **denoising diffusion** process. By learning to reverse a noise-injection procedure, it naturally captures multi-modal action distributions — critical for tasks where multiple valid solutions exist. It supports both state-space and action-space variants.
+
+<p align="center">
+  <img alt="Diffusion Policy Architecture" src="./media/so101/Diffusion/Diffusion.png" width="90%">
+</p>
+
+---
+
+### VQ-BeT — Vector-Quantized Behavior Transformer
+
+VQ-BeT combines **vector quantization** with a Transformer architecture. Actions are discretized into codebook tokens via a VQ-VAE, enabling the model to represent multi-modal action distributions while retaining the sequence modeling strength of Transformers.
+
+<p align="center">
+  <img alt="VQ-BeT Architecture" src="./media/so101/VQ-BET/VQ-BET.png" width="90%">
+</p>
 
 ## Project Structure
 
