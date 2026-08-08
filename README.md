@@ -66,7 +66,9 @@ lerobot/
 ├── docs/                      # Documentation source
 ├── docker/                    # Dockerfiles for benchmarks
 ├── papers/                    # Reference papers (ACT, Diffusion, VQ-BeT)
-├── media/                     # Logos and demo media
+├── media/                     # README images/videos (LeRobot + SO-101)
+│   ├── readme/                # Official LeRobot media assets
+│   └── so101/                 # Your SO-101 photos/videos (add here)
 ├── data/                      # Collected datasets (gitignored)
 ├── outputs/                   # Training outputs / checkpoints (gitignored)
 ├── configs/                   # SO-101 user configs (train / eval / record)
