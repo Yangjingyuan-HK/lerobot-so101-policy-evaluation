@@ -45,7 +45,7 @@ def main():
         print("警告: 未检测到 CUDA，使用 CPU 训练（会非常慢）")
 
     # === 3. 数据集配置 ===
-    # 这里使用本地录制的数据集（对应 record_config.yaml 中的配置）
+    # 这里使用本地录制的数据集（对应 configs/record_config.yaml 中的配置）
     dataset_id = "WT/test"
     dataset_root = "C:/Users/yangj/Desktop/BaiduNetdiskDownload/lerobot"
 

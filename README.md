@@ -69,7 +69,8 @@ lerobot/
 ├── media/                     # Logos and demo media
 ├── data/                      # Collected datasets (gitignored)
 ├── outputs/                   # Training outputs / checkpoints (gitignored)
-├── *.yaml                     # Config files for record / eval / train
+├── configs/                   # SO-101 user configs (train / eval / record)
+├── *.yaml                     # Tool configs (pre-commit)
 └── pyproject.toml             # Project metadata and dependencies
 ```
 
