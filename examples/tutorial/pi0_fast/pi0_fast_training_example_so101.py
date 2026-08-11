@@ -1,27 +1,3 @@
-"""在本地数据集上微调 PI0-FAST 策略（适配 SO-101 + 20GB 显存 GPU）。
-
-PI0-FAST 微调流程：
-  1. 从 HuggingFace 加载预训练模型 lerobot/pi0fast-base（~2.3B 参数）
-  2. 使用本地数据集的统计值创建处理器
-  3. 在本地数据集上微调
-  4. 保存微调后的模型
-
-显存优化策略（20GB GPU）：
-  - dtype=bfloat16（混合精度训练）
-  - gradient_checkpointing=True（用计算换显存）
-  - batch_size=2（PI0-FAST 是大模型，batch 不能太大）
-  - chunk_size=10（较小的动作跨度，加快收敛）
-
-前置条件：
-    1. 安装 pi 依赖：
-       pip install transformers scipy
-       或：pip install -e ".[pi]"
-    2. 首次运行会自动下载预训练模型（约 5-6GB）
-
-使用方式：
-    python examples/tutorial/pi0_fast/pi0_fast_training_example_so101.py
-"""
-
 import sys
 from pathlib import Path
 
