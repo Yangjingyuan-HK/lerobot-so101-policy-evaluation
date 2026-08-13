@@ -29,6 +29,10 @@ This project investigates four representative imitation learning policies, spann
 
 Each algorithm is evaluated on the **SO-101 robotic arm** through a unified three-stage pipeline: zero-shot inference → dataset fine-tuning → post-fine-tuning evaluation. Below are the architecture analyses for each policy.
 
+<p align="center">
+  <img alt="LeRobot" src="./media/readme/policy_evaluation.png" width="100%">
+</p>
+
 ---
 
 ### ACT — Action Chunking Transformer
