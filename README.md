@@ -6,7 +6,6 @@
   <img alt="LeRobot" src="./media/readme/lerobot-logo-thumbnail.png" width="100%">
 </p>
 
-
 ## Project Overview
 
 This project evaluates and compares multiple robot learning policies on the **SO-101 robotic arm** platform, built on top of the [LeRobot](https://github.com/huggingface/lerobot) library by Hugging Face.
