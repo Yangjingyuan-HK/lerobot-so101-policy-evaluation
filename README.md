@@ -1,109 +1,162 @@
 # LeRobot SO-101 Policy Evaluation
 
-> A practical evaluation and benchmarking of state-of-the-art imitation learning and Vision-Language-Action (VLA) policies on the SO-101 robotic arm for real-world manipulation tasks.
+> 机械臂算法比较 — Benchmarking state-of-the-art imitation learning & Vision-Language-Action policies on the SO-101 robotic arm for real-world manipulation tasks.
 
 <p align="center">
   <img alt="LeRobot" src="./media/readme/lerobot-logo-thumbnail.png" width="100%">
 </p>
 
-## Project Overview
+---
 
-This project evaluates and compares multiple robot learning policies on the **SO-101 robotic arm** platform, built on top of the [LeRobot](https://github.com/huggingface/lerobot) library by Hugging Face.
+## 🤖 Can the Robot Learn to Pick & Place?
 
-The goal is to empirically compare policies such as **PI0**, **PI0-Fast**, **VQ-BeT**, **ACT**, and **Diffusion Policy** in terms of:
+**Task:** Grasp the red block and drop it into the box.
 
-- Zero-shot inference performance (without fine-tuning)
-- Fine-tuning convergence speed and final performance
-- Robustness to SO-101's specific kinematic configuration
+The SO-101 follower arm is controlled entirely by a neural policy — no hard-coded motion planning, no traditional inverse kinematics tricks. Everything you see below is pure *learning-from-demonstration* running on real hardware.
 
-## Algorithm Research
+Four state-of-the-art policies, one identical dataset, one identical robot.
+Which one actually **closes the sim-to-real gap**?
 
-This project investigates four representative imitation learning policies, spanning different architectural paradigms — from CVAE-based action chunking to diffusion-based generation and Vision-Language-Action foundation models.
+---
 
-| Policy | Paradigm | Key Idea |
-|---|---|---|
-| **ACT** | CVAE + Transformer | Action chunking for temporal consistency |
-| **PI0** | VLA Foundation Model | Flow matching with shared attention |
-| **Diffusion Policy** | Denoising Diffusion | Multi-modal action generation |
-| **VQ-BeT** | Vector Quantization + Transformer | Discrete action tokens via VQ-VAE |
+## 🎬 Real-World Rollouts (Side-by-Side)
 
-Each algorithm is evaluated on the **SO-101 robotic arm** through a unified three-stage pipeline: zero-shot inference → dataset fine-tuning → post-fine-tuning evaluation. Below are the architecture analyses for each policy.
+<table>
+  <tr>
+    <th align="center" width="25%"><b>ACT</b> — Action Chunking Transformer</th>
+    <th align="center" width="25%"><b>PI0-Fast</b> — VLA Foundation Model</th>
+    <th align="center" width="25%"><b>Diffusion Policy</b> — Denoising Diffusion</th>
+    <th align="center" width="25%"><b>Multi-Task DiT</b> — Flow-Matching DiT</th>
+  </tr>
+  <tr>
+    <td align="center"><img src="./media/readme/ACT.gif"       width="100%"></td>
+    <td align="center"><img src="./media/readme/PI0.gif"       width="100%"></td>
+    <td align="center"><img src="./media/readme/DIFFUSION.gif" width="100%"></td>
+    <td align="center"><img src="./media/readme/MULTI-TASK.gif" width="100%"></td>
+  </tr>
+</table>
+
+---
+
+## 🏆 Current Benchmark Status (2026-08)
+
+> 📍 **The bar:** reach → grasp → lift → transport → release into the box.
+
+| Policy | Paradigm | Reaches Target | Grasps Block | Lifts & Moves | Drops into Box | Success Level |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **ACT** | CVAE + Transformer (from scratch) | ✅ | ✅ | ✅ | ❌ | **3 / 5** — partial success (grasps, cannot release) |
+| **PI0-Fast** | VLA (fine-tuned last 4 layers) | ⚠️ | ❌ | — | — | **1 / 5** — approaches but misses the grasp |
+| **Diffusion Policy** | Denoising Diffusion (from scratch) | ⚠️ | ❌ | — | — | **1 / 5** — approaches but misses the grasp |
+| **Multi-Task DiT** | Flow-Matching DiT (from scratch) | ⚠️ | ❌ | — | — | **1 / 5** — approaches but misses the grasp |
+
+**Key takeaway so far:** Only **ACT** reliably closes the gripper around the red block.
+All other policies can roughly navigate to the workspace but struggle with the precise millimetre-level alignment needed for a firm grasp — suggesting that *action chunking with temporal consistency* (ACT's signature) is disproportionately valuable for this low-data regime on the SO-101 arm.
+
+> ⚠️ These are **intermediate results**. Experiments continue — release mechanism tuning, longer training runs, and data augmentation are tracked in the [Issues](#) section.
+
+---
+
+## 📚 How Was It Trained? The Dataset
+
+All four policies are trained on **exactly the same demonstrations** so the comparison is fair:
+
+- **Collection method:** Kinesthetic teaching — the SO-101 *leader* arm is manually guided, and the *follower* arm records every joint state, gripper position, and camera frame in sync.
+- **Episodes:** 50 full pick-and-place demonstrations (grasp the red block → lift → carry → drop into the target box).
+- **Sensors:** 2× RGB cameras (front view + side/wrist view) + 6-DoF joint states + binary gripper state.
+- **Format:** [LeRobotDataset v3](https://huggingface.co/docs/lerobot/lerobot-dataset-v3) — compatible with every policy out of the box.
+- **Dataset ID:** `WT/test`
+
+The exact same 50 episodes are fed to every training script in [`examples/tutorial/`](examples/tutorial/). The only variables that change are the **architecture** and the **training recipe** (see below).
+
+---
+
+## 🧠 Four Architectures, Four Philosophies
+
+Each policy represents a different paradigm in robot learning — from classical transformer-based imitation learning to billion-parameter VLA foundation models.
+
+### ① ACT — Action Chunking Transformer
+
+> **"Don't predict one action. Predict a *chunk*."**
+
+ACT replaces the standard single-step regressor with a **Conditional VAE + Transformer** that emits a short *sequence* of future actions (action chunking). This dramatically smooths out jitter and mitigates compounding error — exactly the property that lets it succeed at grasping where the others miss.
+
+- **Training:** Trained **from scratch** on the 50-episode dataset.
+- **Recipe:** 100 000 steps, batch size 8, default ACTConfig (CVAE latent + temporal Transformer decoder).
+- **Normalization:** MEAN_STD over states & actions inherited from dataset statistics.
 
 <p align="center">
-  <img alt="LeRobot" src="./media/readme/policy_evaluation.png" width="100%">
+  <img alt="ACT Architecture" src="./media/so101/ACT/ACT.png" width="85%">
 </p>
 
 ---
 
-### ACT — Action Chunking Transformer
+### ② PI0-Fast — Vision-Language-Action Foundation Model
 
-ACT employs a Conditional Variational Autoencoder (CVAE) with a Transformer backbone. Its core innovation is **action chunking** — predicting multi-step action sequences rather than single steps, which improves temporal consistency and mitigates compounding errors in manipulation tasks.
+> **"Stand on the shoulders of a 3B-parameter giant."**
+
+PI0-Fast is built on **PaliGemma** (≈3 B params, flow-matching action head). Instead of training from scratch, we **freeze the entire vision-language backbone** and only fine-tune the **last 4 transformer layers + lm_head + final norm** — a classic parameter-efficient transfer-learning recipe for VLA models.
+
+- **Pretrained base:** `lerobot/pi0fast-base`
+- **Fine-tuning scope:** Last 4 LM layers + lm_head + norm (rest is frozen).
+- **Recipe:** 20 000 steps, batch size 1, bfloat16 mixed precision + gradient checkpointing.
+- **Language task token:** `"pick up the block"` prepended to every sample.
+- **Why it might struggle:** SO-101's kinematics differ substantially from the robots PI0 was pretrained on — even partial fine-tuning may be insufficient to bridge this gap in the low-data regime.
 
 <p align="center">
-  <img alt="ACT Architecture" src="./media/so101/ACT/ACT.png" width="90%">
+  <img alt="PI0 Architecture" src="./media/so101/PI0/PI0.png" width="85%">
 </p>
 
 ---
 
-### PI0 — Vision-Language-Action Model
+### ③ Diffusion Policy — Denoising Diffusion for Action Generation
 
-PI0 is a VLA foundation model built on PaliGemma (~3 B parameters). It adopts **flow matching** for action generation, with a shared transformer that processes visual-language context (prefix stream) and action prediction (suffix stream) through cross-attention, enabling language-conditioned manipulation.
+> **"Model the distribution, not the mean — because there's more than one way to grasp a block."**
 
+Diffusion Policy frames action generation as a **denoising diffusion** process over a 64-step action horizon. By gradually removing noise, it naturally captures *multi-modal* action distributions — a property that should help in ambiguous manipulation scenarios. Quantile normalization is used for states/actions to be robust to outlier kinesthetic demonstrations.
+
+- **Training:** Trained **from scratch** on the 50-episode dataset.
+- **Recipe:** 100 000 steps, batch size 12, ResNet-18 vision backbone, cosine LR scheduler with warmup.
+- **Normalization:** QUANTILES (q01–q99) for state & action, MEAN_STD for pixels.
+- **Rollout window:** n_obs_steps=2 → horizon=64 → execute 32 steps / re-plan.
 
 <p align="center">
-  <img alt="PI0 Architecture" src="./media/so101/PI0/PI0.png" width="90%">
+  <img alt="Diffusion Policy Architecture" src="./media/so101/Diffusion/Diffusion.png" width="85%">
 </p>
 
 ---
 
-### Diffusion Policy
+### ④ Multi-Task DiT — Flow-Matching Diffusion Transformer
 
-Diffusion Policy formulates action generation as a **denoising diffusion** process. By learning to reverse a noise-injection procedure, it naturally captures multi-modal action distributions — critical for tasks where multiple valid solutions exist. It supports both state-space and action-space variants.
+> **"One DiT, many tasks — conditioned on language."**
 
+Multi-Task DiT is a **flow-matching Diffusion Transformer** that takes both visual tokens (CLIP ViT-B/16) and text tokens (CLIP text encoder) as conditioning. Designed for multi-task transfer across language instructions, it predicts a 32-step action trajectory in a single forward pass of a 6-layer, 512-dim DiT.
+
+- **Training:** Trained **from scratch** on the 50-episode dataset (CLIP encoders are pretrained and lightly fine-tuned with a 0.1× LR multiplier).
+- **Recipe:** 20 000 steps, batch size 8, flow-matching objective.
+- **Conditioning:** Text task `"pick up the block"` encoded via CLIP text encoder.
+- **Rollout window:** n_obs_steps=2 → horizon=32 → execute 24 steps / re-plan.
+
+<!-- ⚠️ Architecture diagram placeholder — to be filled in by the author. -->
 <p align="center">
-  <img alt="Diffusion Policy Architecture" src="./media/so101/Diffusion/Diffusion.png" width="90%">
+  <img alt="Multi-Task DiT Architecture (coming soon)" src="" width="85%">
+  <br>
+  <sub><i>🏗 Architecture diagram placeholder — will be updated shortly.</i></sub>
 </p>
 
 ---
 
-### VQ-BeT — Vector-Quantized Behavior Transformer
+## 🧾 Training Recipe Cheat-Sheet
 
-VQ-BeT combines **vector quantization** with a Transformer architecture. Actions are discretized into codebook tokens via a VQ-VAE, enabling the model to represent multi-modal action distributions while retaining the sequence modeling strength of Transformers.
+| Policy | Params approx. | Init | Trainable scope | Steps | Batch | Notes |
+| :--- | :---: | :--- | :--- | :---: | :---: | :--- |
+| ACT | ~50 M | Scratch | Full model | 100 k | 8 | CVAE + action chunking |
+| PI0-Fast | ~3 B (0.4 B trainable) | `lerobot/pi0fast-base` | Last 4 LM layers + head + norm | 20 k | 1 | bf16 + grad ckpt, VLM frozen |
+| Diffusion Policy | ~70 M | Scratch | Full model | 100 k | 12 | Quantile norm, cosine schedule |
+| Multi-Task DiT | ~230 M | Scratch + CLIP pretrained | Full DiT + 0.1× LR on CLIP | 20 k | 8 | Flow matching, lang-conditioned DiT |
 
-<p align="center">
-  <img alt="VQ-BeT Architecture" src="./media/so101/VQ-BET/VQ-BET.png" width="90%">
-</p>
+---
 
-## Project Structure
-
-```
-lerobot/
-├── examples/
-│   └── tutorial/              # Custom experiment scripts (per-policy)
-│       ├── pi0/               # PI0 zero-shot / training / inference
-│       ├── pi0_fast/          # PI0-Fast zero-shot / training / inference
-│       ├── vqbet/             # VQ-BeT experiments
-│       ├── act/               # ACT experiments
-│       ├── diffusion/         # Diffusion Policy experiments
-│       ├── smolvla/           # SmolVLA experiments
-│       ├── async-inf/         # Async inference experiments
-│       └── rl/                # Reinforcement learning experiments
-├── src/lerobot/               # LeRobot library source (policies, datasets, ...)
-├── tests/                     # Test suite (artifacts excluded)
-├── docs/                      # Documentation source
-├── docker/                    # Dockerfiles for benchmarks
-├── papers/                    # Reference papers (ACT, Diffusion, VQ-BeT)
-├── media/                     # README images/videos (LeRobot + SO-101)
-│   ├── readme/                # Official LeRobot media assets
-│   └── so101/                 # Your SO-101 photos/videos (add here)
-├── data/                      # Collected datasets (gitignored)
-├── outputs/                   # Training outputs / checkpoints (gitignored)
-├── configs/                   # SO-101 user configs (train / eval / record)
-├── *.yaml                     # Tool configs (pre-commit)
-└── pyproject.toml             # Project metadata and dependencies
-```
-
-## Quick Start
+## 🚀 Quick Start
 
 ### Installation
 
@@ -113,56 +166,90 @@ cd lerobot-so101-policy-evaluation
 uv sync --locked --extra all
 ```
 
-### SO-101 Hardware Setup
+### SO-101 Hardware Calibration
 
-Calibrate the SO-101 arm (master + slave) following the [SO-101 hardware guide](https://huggingface.co/docs/lerobot/so101):
+Calibrate leader + follower arms following the [SO-101 hardware guide](https://huggingface.co/docs/lerobot/so101):
 
 ```bash
 lerobot-calibrate --robot.type=so101_follower --robot.port=COM3
-lerobot-calibrate --robot.type=so101_leader  --robot.port=COM4
+lerobot-calibrate --robot.type=so101_leader   --robot.port=COM4
 ```
 
-### Training a Policy
-
-Example: fine-tuning PI0-Fast on SO-101 data:
+### Train a Policy (50-episode pick-and-place dataset)
 
 ```bash
+# ACT (from scratch)
+python examples/tutorial/act/act_training_example_so101.py
+
+# PI0-Fast (fine-tune last 4 layers)
 python examples/tutorial/pi0_fast/pi0_fast_training_example_so101.py
+
+# Diffusion Policy (from scratch, quantile norm)
+python examples/tutorial/diffusion/diffusion_training_example_so101.py
+
+# Multi-Task DiT (from scratch + CLIP)
+python examples/tutorial/multi_task_dit/multi_task_dit_training_example_so101.py
 ```
 
-### Evaluation
-
-Run inference with a fine-tuned checkpoint:
+### Run Inference on the Real Robot
 
 ```bash
-python examples/tutorial/pi0_fast/pi0_fast_using_example_so101.py
+python examples/tutorial/act/act_using_example_so101.py
+# ...and analogously for the other policies.
 ```
 
-### Zero-shot Inference (no fine-tuning)
+---
 
-```bash
-python examples/tutorial/pi0_fast/pi0_fast_zeroshot_so101.py
+## 📁 Project Layout
+
+```
+lerobot/
+├── examples/tutorial/        # Per-policy train / eval / zero-shot scripts
+│   ├── act/                  # ACT — CVAE + Transformer
+│   ├── pi0_fast/             # PI0-Fast — VLA fine-tuning (last 4 layers)
+│   ├── diffusion/            # Diffusion Policy — denoising diffusion
+│   ├── multi_task_dit/       # Multi-Task DiT — flow-matching DiT
+│   ├── pi0/  pi05/  smolvla/ # Additional VLA experiments
+│   ├── vqbet/                # Legacy VQ-BeT experiments (not in benchmark)
+│   ├── async-inf/            # Async inference (policy server / robot client)
+│   └── rl/                   # RL experiments (HiLSer-RL, reward classifier)
+├── src/lerobot/              # LeRobot library (policies, datasets, robots, …)
+├── tests/                    # Test suite
+├── docker/                   # Dockerfiles for benchmarks
+├── media/
+│   ├── readme/               # GIF rollouts & banner images (ACT, PI0, DIFFUSION, MULTI-TASK)
+│   └── so101/                # Per-policy architecture diagrams
+├── data/                     # Collected datasets (gitignored)
+├── outputs/                  # Training checkpoints (gitignored)
+└── configs/                  # SO-101 user configs (train / eval / record)
 ```
 
-## Key Findings
+---
 
-> Detailed quantitative results will be added as experiments complete.
+## 🔮 Next Steps
 
-Expected outcomes (based on LeRobot community reports):
+Work in progress — tracked on this repo:
 
-- **Zero-shot**: poor on SO-101 because pretrained policies have not seen this exact arm configuration.
-- **Fine-tuned**: significant improvement, especially for PI0 / PI0-Fast which leverage large pretrained foundations.
-- **PI0-Fast vs. PI0**: PI0-Fast converges ~5× faster while reaching comparable final performance, thanks to FAST tokenization (DCT + BPE) and KV-cache inference.
+- [ ] Tune the gripper **release** timing on ACT (it grasps, now it needs to *let go*).
+- [ ] Add **data augmentation** (color jitter, random crop) to Diffusion & DiT to improve grasp alignment.
+- [ ] Train PI0-Fast beyond 20 k steps & compare to PI0.5 full-expert fine-tune.
+- [ ] Quantify success rates with ≥ 20 rollouts per policy (instead of qualitative pass/fail).
+- [ ] Upload the full 50-episode dataset & fine-tuned checkpoints to Hugging Face Hub.
 
-## References
+---
 
-- [LeRobot](https://github.com/huggingface/lerobot) — Hugging Face robotics library (upstream project)
-- [PI0 / PI0-Fast documentation](https://huggingface.co/docs/lerobot/pi0fast)
-- [VQ-BeT paper](https://arxiv.org/abs/2403.06009)
+## 📚 References
+
+- [LeRobot](https://github.com/huggingface/lerobot) — upstream robotics library by Hugging Face
+- PI0-Fast & PI0.5 — [PI0/PI0-Fast docs](https://huggingface.co/docs/lerobot/pi0fast)
+- ACT — *"Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware"* ([Chi et al., 2023](https://arxiv.org/abs/2304.13705))
+- Diffusion Policy — *"Diffusion Policy: Visuomotor Policy Learning via Action Diffusion"* ([Chi et al., 2023](https://arxiv.org/abs/2303.04137))
 - [SO-101 hardware guide](https://huggingface.co/docs/lerobot/so101)
-- [LeRobotDataset format](https://huggingface.co/docs/lerobot/lerobot-dataset-v3)
+- [LeRobotDataset format (v3)](https://huggingface.co/docs/lerobot/lerobot-dataset-v3)
 
-## Author
+---
+
+## 👤 Author
 
 **YANG Jingyuan**
 
@@ -170,10 +257,8 @@ Expected outcomes (based on LeRobot community reports):
 - GitHub: [@Yangjingyuan-HK](https://github.com/Yangjingyuan-HK)
 - Email: `25092109d@connect.polyu.hk`
 
-## License
-
-Apache License 2.0 — inherited from the upstream [LeRobot](https://github.com/huggingface/lerobot) project. See [LICENSE](./LICENSE) for details.
+---
 
 ## 🙏 Acknowledgements
 
-This project builds on the excellent [LeRobot](https://github.com/huggingface/lerobot) library developed by the Hugging Face robotics team. The original LeRobot library is licensed under Apache 2.0.
+Built on top of the excellent [LeRobot](https://github.com/huggingface/lerobot) library from the Hugging Face robotics team. Upstream code and this project are licensed under **Apache 2.0**.
