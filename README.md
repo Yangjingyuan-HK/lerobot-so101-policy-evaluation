@@ -205,7 +205,7 @@ Diffusion Policy frames action generation as a **denoising diffusion** process o
 Multi-Task DiT is a **flow-matching Diffusion Transformer** that takes both visual tokens (CLIP ViT-B/16) and text tokens (CLIP text encoder) as conditioning. Designed for multi-task transfer across language instructions, it predicts a 32-step action trajectory in a single forward pass of a 6-layer, 512-dim DiT.
 
 <p align="center">
-  <img alt="Multi-Task Architecture" src="./mediareadme/MULTI-TASK.png" width="85%">
+  <img alt="Multi-Task Architecture" src="./media/readme/MULTI-TASK.png" width="85%">
 </p>
 
 <p align="center">
