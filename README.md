@@ -78,8 +78,6 @@ Each policy represents a different paradigm in robot learning — from classical
 
 ### ① ACT — Action Chunking Transformer
 
-> **"Don't predict one action. Predict a *chunk*."**
-
 ACT replaces the standard single-step regressor with a **Conditional VAE + Transformer** that emits a short *sequence* of future actions (action chunking). This dramatically smooths out jitter and mitigates compounding error — exactly the property that lets it succeed at grasping where the others miss.
 
 <p align="center">
@@ -118,8 +116,6 @@ ACT replaces the standard single-step regressor with a **Conditional VAE + Trans
 ---
 
 ### ② PI0 — Vision-Language-Action Foundation Model
-
-> **"Stand on the shoulders of a 3B-parameter giant."**
 
 PI0 is built on **PaliGemma** (≈3 B params, flow-matching action head). Instead of training from scratch, we **freeze the entire vision-language backbone** and only fine-tune the **last 4 transformer layers + lm_head + final norm** — a classic parameter-efficient transfer-learning recipe for VLA models.
 
@@ -206,14 +202,10 @@ Diffusion Policy frames action generation as a **denoising diffusion** process o
 
 ### ④ Multi-Task DiT — Flow-Matching Diffusion Transformer
 
-> **"One DiT, many tasks — conditioned on language."**
-
 Multi-Task DiT is a **flow-matching Diffusion Transformer** that takes both visual tokens (CLIP ViT-B/16) and text tokens (CLIP text encoder) as conditioning. Designed for multi-task transfer across language instructions, it predicts a 32-step action trajectory in a single forward pass of a 6-layer, 512-dim DiT.
 
 <p align="center">
-  <img alt="Multi-Task DiT Architecture (coming soon)" src="" width="85%">
-  <br>
-  <sub><i>🏗 Architecture diagram placeholder — will be updated shortly.</i></sub>
+  <img alt="Multi-Task Architecture" src="./mediareadme/MULTI-TASK.png" width="85%">
 </p>
 
 <p align="center">
@@ -288,16 +280,7 @@ lerobot/
 ├── src/lerobot/              # LeRobot library source (policies, datasets, robots, …)
 ├── tests/                    # Test suite
 ├── docker/                   # Dockerfiles for benchmarks
-├── media/
-│   ├── readme/               # Real-world rollout GIFs + banner images
-│   │   ├── ACT.gif
-│   │   ├── PI0.gif
-│   │   ├── DIFFUSION.gif
-│   │   └── MULTI-TASK.gif
-│   └── so101/                # Per-policy architecture diagrams
-│       ├── ACT/ACT.png
-│       ├── PI0/PI0.png
-│       └── Diffusion/Diffusion.png
+├── media/                    # Recorded rollout GIFs & architecture diagrams
 ├── data/                     # Collected datasets (gitignored)
 ├── outputs/                  # Training checkpoints (gitignored)
 └── configs/                  # SO-101 user configs (train / eval / record)
@@ -321,8 +304,9 @@ Work in progress — tracked on this repo:
 
 - [LeRobot](https://github.com/huggingface/lerobot) — upstream robotics library by Hugging Face
 - PI0 — [PI0/PI0-Fast docs](https://huggingface.co/docs/lerobot/pi0fast)
-- ACT — *"Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware"* ([Chi et al., 2023](https://arxiv.org/abs/2304.13705))
-- Diffusion Policy — *"Diffusion Policy: Visuomotor Policy Learning via Action Diffusion"* ([Chi et al., 2023](https://arxiv.org/abs/2303.04137))
+- ACT — *"Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware"* ([Zhao et al., RSS 2023](https://arxiv.org/abs/2304.13705)) — first author **Tony Z. Zhao** (ALOHA + ACT)
+- Diffusion Policy — *"Diffusion Policy: Visuomotor Policy Learning via Action Diffusion"* ([Chi et al., RSS 2023](https://arxiv.org/abs/2303.04137))
+- Multi-Task DiT — *"A Careful Examination of Large Behavior Models for Multitask Dexterous Manipulation"* ([TRI LBM Team, Science Robotics 2026](https://arxiv.org/abs/2507.05331)) — LBM-1, the flow-matching DiT + CLIP conditioning architecture that LeRobot's MultiTaskDiTPolicy is based on
 - [SO-101 hardware guide](https://huggingface.co/docs/lerobot/so101)
 - [LeRobotDataset format (v3)](https://huggingface.co/docs/lerobot/lerobot-dataset-v3)
 
