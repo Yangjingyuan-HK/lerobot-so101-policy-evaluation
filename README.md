@@ -86,7 +86,7 @@ ACT replaces the standard single-step regressor with a **Conditional VAE + Trans
 
 <p align="center">
   <img src="./media/readme/ACT.gif" width="70%">
-  <br><sub><i>Real rollout — ACT reaches, grasps, lifts, but cannot yet release into the box.</i></sub>
+  <br><sub><i>Real rollout</i></sub>
 </p>
 
 #### 🔁 Training Pipeline
