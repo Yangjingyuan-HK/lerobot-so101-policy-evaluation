@@ -125,7 +125,7 @@ PI0 is built on **PaliGemma** (≈3 B params, flow-matching action head). Instea
 
 <p align="center">
   <img src="./media/readme/PI0.gif" width="70%">
-  <br><sub><i>Real rollout — PI0 approaches the workspace but misses the final millimetre-level alignment for grasping.</i></sub>
+  <br><sub><i>Real rollout</i></sub>
 </p>
 
 #### 🔁 Training Pipeline (PI0-Fast recipe)
@@ -168,7 +168,7 @@ Diffusion Policy frames action generation as a **denoising diffusion** process o
 
 <p align="center">
   <img src="./media/readme/DIFFUSION.gif" width="70%">
-  <br><sub><i>Real rollout — Diffusion Policy explores the workspace but fails to close the gripper on the block.</i></sub>
+  <br><sub><i>Real rollout</i></sub>
 </p>
 
 #### 🔁 Training Pipeline
@@ -210,7 +210,7 @@ Multi-Task DiT is a **flow-matching Diffusion Transformer** that takes both visu
 
 <p align="center">
   <img src="./media/readme/MULTI-TASK.gif" width="70%">
-  <br><sub><i>Real rollout — Multi-Task DiT reaches towards the scene but doesn't align the gripper well enough to close it.</i></sub>
+  <br><sub><i>Real rollout</i></sub>
 </p>
 
 #### 🔁 Training Pipeline
